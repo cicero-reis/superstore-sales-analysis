@@ -1,0 +1,26 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=db_super_store
+    volumes:
+      - super_store_data:/var/lib/mysql
+      - ./mysql-init.sql:/docker-entrypoint-initdb.d/mysql-init.sql
+    restart: unless-stopped
+    networks:
+      - super_store_network
+
+
+networks:
+  super_store_network:
+    name: super_store_network
+    driver: bridge
+
+volumes:
+  super_store_data:
+    name: super_store_data
+    driver: local  
