@@ -1,41 +1,55 @@
 # 📊 Superstore Sales Analysis
 
-**Projeto de Análise de Dados — Portfólio Analista de Dados (Iniciante)**
+**Projeto de Análise de Dados — Portfólio**
 
 ---
 
 ## 🔹 **Descrição do Projeto**
 
-Este projeto utiliza o dataset **Superstore Sales** (Tableau/Kaggle) para realizar uma análise completa de vendas, lucros, descontos e performance por região e categoria.
-O objetivo é identificar padrões, oportunidades de melhoria e gerar insights acionáveis para otimização de vendas e lucratividade.
+Este projeto utiliza o dataset **Superstore Sales** (Tableau) para estudar conceitos essenciais de análise de dados: limpeza, preparação, criação de perguntas, definição de objetivos SMART e organização dos dados em um modelo dimensional (*Star Schema*).
 
-O projeto segue o ciclo **DAA (Data Analysis Approach)**:
+O foco principal é entender:
 
-1. **Perguntar (Ask)** — Definir perguntas e objetivos SMART
-2. **Preparar (Prepare)** — Limpeza e padronização dos dados no MySQL 8
-3. **Processar (Process)** — Transformações, agregações e cálculos avançados
-4. **Analisar (Analyze)** — Extração de insights, rankings e tendências
-5. **Compartilhar (Share)** — Visualizações, gráficos e relatórios
-6. **Agir (Act)** — Recomendações de negócio baseadas na análise
+* Como preparar dados reais para análise
+* Como transformar dados brutos em informações úteis
+* Como construir perguntas de negócio simples e objetivas
+* Como documentar bem o processo (Ask → Prepare → SOW → SMART)
+
+Este repositório é voltado para prática e portfólio de iniciantes.
 
 ---
 
-## 🔹 **Objetivos SMART**
+## 🔹 **Perguntas de Negócio (Ask)**
 
-* Identificar os produtos que mais geram prejuízo
-* Avaliar performance de vendas e lucro por região
-* Analisar o impacto de descontos na lucratividade
+As perguntas escolhidas são simples, diretas e adequadas para quem está começando:
 
-> Todos os objetivos possuem métricas mensuráveis e prazo de entrega de análise.
+1. **Como estão as vendas atualmente?**
+2. **Quais produtos vendem mais?**
+3. **A empresa está tendo lucro?**
+4. **Quem são nossos principais clientes?**
+5. **Onde vendemos mais?**
+6. **O desconto está ajudando ou atrapalhando?**
+
+---
+
+## 🔹 **Objetivos SMART (Simples)**
+
+* **S (Específico):** Identificar níveis atuais de vendas, lucro e produtos mais vendidos.
+* **M (Mensurável):** Medir quantidade vendida, total de vendas, total de lucro e impacto dos descontos.
+* **A (Alcançável):** Utilizar apenas SQL e dados da Superstore.
+* **R (Relevante):** Informações essenciais para entender o desempenho básico da loja.
+* **T (Temporal):** Concluir a análise inicial até o final do estudo do módulo *Prepare*.
 
 ---
 
 ## 🔹 **Tecnologias Utilizadas**
 
-* **Banco de dados:** MySQL 8
-* **Linguagem de Análise:** SQL, Python (Jupyter Notebooks)
-* **Visualização:** Matplotlib / Seaborn / Tableau
-* **Controle de versão:** Git / GitHub
+* **MySQL 8** — limpeza, normalização e criação das tabelas dimensionais
+* **SQL** — consultas, CTEs e window functions
+* **Git / GitHub** — versionamento e portfólio
+* **(Opcional futuramente)** Tableau para visualização
+
+> Por enquanto, o projeto está focado nas fases **Ask** e **Prepare**.
 
 ---
 
@@ -45,72 +59,40 @@ O projeto segue o ciclo **DAA (Data Analysis Approach)**:
 Superstore-Sales-Analysis/
 │
 ├── README.md
+│
 ├── data/
 │   ├── superstore.csv
-│   └── superstore_clean.csv
-├── sql/
-│   ├── 01_import_prepare.sql
-│   ├── 02_cte_window_functions.sql
-│   └── 03_aggregations.sql
-├── notebooks/
-│   ├── EDA_Superstore.ipynb
-│   └── Insights_Analysis.ipynb
-├── docs/
+│   ├── superstore.xls
+├── docker/
+│   ├── docker-compose.yml
+│   ├── mysql-init.sql
+│── docs/
 │   ├── Ask.md
-│   ├── Prepare.md
-│   ├── Process.md
-│   ├── Analyze.md
-│   ├── Share.md
-│   ├── Act.md
 │   ├── SMART.md
+│   ├── Prepare.md
 │   └── SOW.md
-└── visuals/
-    ├── sales_trends.png
-    ├── profit_by_category.png
-    └── region_ranking.png
+├── sql/
+│   ├── 01_prepare_dates.sql
+│   ├── 02_prepare_numbers.sql
+│   ├── 03_dim_customer.sql
+│   ├── 04_dim_product.sql
+│   ├── 05_dim_order.sql
+│   ├── 06_dim_date.sql
+│   └── 07_fact_sales.sql
+│   
 ```
 
----
+## 🔹 **Entregáveis**
 
-## 🔹 **Como Usar**
-
-1. Clonar o repositório:
-
-```bash
-git clone https://github.com/seu-usuario/Superstore-Sales-Analysis.git
-```
-
-2. Importar o dataset para o MySQL:
-
-```sql
-LOAD DATA INFILE '/caminho/para/superstore.csv' INTO TABLE superloja
-FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
-```
-
-3. Executar scripts SQL na ordem:
-
-```text
-01_import_prepare.sql → 03_aggregations.sql → 02_cte_window_functions.sql
-```
-
-4. Abrir notebooks Jupyter para análise visual e insights.
-
----
-
-## 🔹 **Entregáveis do Projeto**
-
-* Dados limpos e estruturados (MySQL)
-* Notebooks com análises e gráficos
-* Relatório analítico detalhado (PDF/Markdown)
-* Visualizações: tendências, rankings, KPIs
+* Tabela original corrigida
+* Tabelas dimensionais (dim_customer, dim_product, dim_order, 06_dim_date)
+* Tabela fato (fact_sales)
+* Documentação clara (Ask, SMART, Prepare, SOW)
+* README estruturado para portfólio
 
 ---
 
 ## 🔹 **Autor**
 
-**Cicero Reis** — Analista de Dados em desenvolvimento
-📧 Email: [cicero@email.com](mailto:cicero@email.com)
-🌐 GitHub: [github.com/seu-usuario](https://github.com/seu-usuario)
-
----
-
+**Cicero Reis**
+Analista de Dados em desenvolvimento
