@@ -1,6 +1,10 @@
-# ✅ **1. Estrutura da Dimensão Cliente (DimCliente)**
+# 💼 **Dimensão Cliente (dim_customer)**
 
-A partir dos dados do Superstore, o que pertence ao cliente?
+A dimensão cliente armazena todas as informações relacionadas aos clientes do dataset **Superstore**.
+
+---
+
+## 1️⃣ **Colunas do dataset que pertencem ao cliente**
 
 | Coluna no dataset | Pertence ao cliente?  | Vai para a dimensão? |
 | ----------------- | --------------------- | -------------------- |
@@ -14,7 +18,7 @@ A partir dos dados do Superstore, o que pertence ao cliente?
 
 ---
 
-# ✅ **2. Criar a tabela no MySQL**
+## 2️⃣ **Criar a tabela no MySQL**
 
 ```sql
 CREATE TABLE IF NOT EXISTS dim_customer (
@@ -28,9 +32,10 @@ CREATE TABLE IF NOT EXISTS dim_customer (
     postal_code      INT
 );
 ```
+
 ---
 
-# ✅ **3. Popular a DimCliente a partir da tabela original e conferir duplicados**
+## 3️⃣ **Identificar clientes duplicados na tabela original**
 
 ```sql
 SELECT 
@@ -40,6 +45,10 @@ FROM superstore
 GROUP BY `Customer ID`
 HAVING total > 1;
 ```
+
+---
+
+## 4️⃣ **Popular a dimensão removendo duplicados com ROW_NUMBER**
 
 ```sql
 INSERT INTO dim_customer (
@@ -64,7 +73,7 @@ WHERE t.rn = 1;
 
 ---
 
-# ✅ **4. Conferir duplicados da tabela Dimensão**
+## 5️⃣ **Conferir duplicados na dimensão criada**
 
 ```sql
 SELECT 
@@ -74,17 +83,16 @@ FROM dim_customer dc
 GROUP BY dc.customer_id
 HAVING total > 1;
 ```
+
 ---
 
-# 🔍 **3. Conferir quantos produtos únicos existem**
+## 6️⃣ **Verificar quantidade de clientes únicos**
 
 ```sql
+-- Na tabela original
 SELECT COUNT(DISTINCT `Customer ID`) 
 FROM superstore;
-```
 
-E depois:
-
-```sql
-SELECT COUNT(*) FROM dim_client;
-```
+-- Na dimensão criada
+SELECT COUNT(*) 
+FROM dim_customer;

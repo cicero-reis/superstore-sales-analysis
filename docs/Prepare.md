@@ -1,14 +1,30 @@
-## Projeto: Análise de Vendas - Superstore Sales (MySQL 8)
+## 📊 **Projeto: Análise de Vendas — Superstore Sales (MySQL 8)**
 
 ### 🎯 **Objetivo da Etapa**
 
-Garantir que os dados do **Superstore Sales** estejam prontos para análise em **MySQL 8**, organizados, consistentes e sem problemas de integridade.
-Inclui importação, validação, limpeza e criação de campos derivados.
+Preparar o dataset **Superstore Sales** para análise no **MySQL 8**, garantindo:
 
-### 📂 **Sobre o Dataset**
+* Estrutura organizada
+* Dados limpos e consistentes
+* Tipos corretos
+* Criação de campos derivados
+* Base pronta para dashboards e análises exploratórias
 
-* **Fonte:** Tableau Sample Dataset
-* **Formato original:** CSV (9994 linhas, 21 colunas)
-* **Colunas:** Row ID|Order ID|Ship Mode|Customer ID|Customer Name|Segment|Country|City|State|Postal Code|Region|Product ID|Category|Sub-Category|Product Name|Quantity|order_date_clean|ship_date_clean|sales_clean|discount_clean|profit_clean|
+---
 
+## 📂 **Sobre o Dataset**
+
+* **Fonte:** Tableau — Sample Superstore
+* **Formato original:** CSV
+* **Tamanho:** 9.994 linhas • 21 colunas
+* **Objetivo do tratamento:** transformar dados brutos em um conjunto confiável para análise de vendas, lucro e comportamento do cliente.
+
+### 📌 **Colunas do Dataset após limpeza**
+
+| Tipo                             | Colunas                                                                                                                   |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Identificação**                | `Row ID`, `Order ID`, `Product ID`, `Customer ID`                                                                         |
+| **Datas limpas**                 | `order_date_clean`, `ship_date_clean`                                                                                     |
+| **Texto / Categoria**            | `Ship Mode`, `Customer Name`, `Segment`, `Country`, `City`, `State`, `Region`, `Category`, `Sub-Category`, `Product Name` |
+| **Numéricos tratados (DECIMAL)** | `sales_clean`, `discount_clean`, `profit_clean`, `Quantity`, `Postal Code`                                                |
 

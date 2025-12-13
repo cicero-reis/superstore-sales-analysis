@@ -1,4 +1,18 @@
-# ✅ **1. Criar a tabela `fact_sales`**
+# 📦 **Tabela Fato — `fact_sales`**
+
+A **fact_sales** armazena todas as métricas que serão analisadas e conecta as dimensões através de chaves estrangeiras.
+
+Ela responde perguntas como:
+
+✔ Total de vendas
+✔ Total de lucro
+✔ Vendas por cliente, produto, estado
+✔ Descontos aplicados
+✔ Quantidade vendida
+
+---
+
+# 🧱 **1. Criar a tabela `fact_sales`**
 
 ```sql
 CREATE TABLE fact_sales (
@@ -26,11 +40,11 @@ CREATE TABLE fact_sales (
 
 ---
 
-# ✅ **2. Popular a fato com base na tabela original**
+# 🚀 **2. Popular a tabela fato**
 
 ```sql
 INSERT INTO fact_sales (
-	date_key,
+    date_key,
     order_key,
     product_key,
     customer_key,    
@@ -59,179 +73,28 @@ JOIN dim_customer c
 
 ---
 
-✅ 1. Verificar
-```sql
+# 🔍 **3. Validações essenciais**
 
+---
+
+## ✅ **3.1. Conferir número total de linhas**
+
+```sql
 SELECT
-(SELECT COUNT(*) FROM superstore) as total_superstore,
-(SELECT COUNT(*) FROM fact_sales) as total_fact_sales
-
-SELECT
-(
-    SELECT 
-        COUNT(*) 
-    FROM superstore s 
-    where s.`Order ID` = 'CA-2014-115812'
-) as 'total_superstore',
-(
-    SELECT 
-	    COUNT(*)
-    FROM fact_sales f 
-    JOIN dim_order d ON d.order_key = f.order_key
-    WHERE d.order_id = 'CA-2014-115812'
-) as 'total_fact_sales';
-
-SELECT 
-	s.`Order ID`, s.Quantity, s.order_date_clean, s.`Customer Name`
-FROM superstore s 
-WHERE s.`Order ID` = 'CA-2014-115812';
-
-SELECT 
-	d.order_id, f.quantity, d.order_date, d2.customer_name
-FROM fact_sales f 
-JOIN dim_order d ON d.order_key = f.order_key
-JOIN dim_customer d2 ON d2.customer_key = f.customer_key
-WHERE d.order_id = 'CA-2014-115812';
-```
----
-
-# ✅ 2. Verificar se todas as chaves estrangeiras foram resolvidas corretamente
-
-## **2.1. Ver linhas com dimensões faltando (deveria retornar 0)**
-
-```sql
-SELECT *
-FROM fact_sales
-WHERE order_key IS NULL
-   OR product_key IS NULL
-   OR customer_key IS NULL;
+(SELECT COUNT(*) FROM superstore) AS total_superstore,
+(SELECT COUNT(*) FROM fact_sales) AS total_fact_sales;
 ```
 
-Se retornar **0**, está OK.
----
-
-# ✅ 3. Verificar se os valores numéricos foram importados corretamente
+→ **Os valores devem ser iguais.**
 
 ---
 
-# 🧪 **3.1. Soma de Sales**
+# 🏁 **Resumo das validações**
 
-### Soma da tabela original:
-
-```sql
-SELECT SUM(REPLACE(Sales, ',', '.') + 0) AS total_sales_superstore
-FROM superstore;
-```
-
-### Soma da tabela fato:
-
-```sql
-SELECT SUM(sales) AS total_sales_fact
-FROM fact_sales;
-```
-
-✔ **Os valores devem ser iguais (ou diferir apenas por arredondamento pequeno).**
-
----
-
-# 🧪 **3.2. Soma de Quantity**
-
-```sql
-SELECT SUM(Quantity) FROM superstore;
-SELECT SUM(quantity) FROM fact_sales;
-```
-
-➡ Devem bater exatamente.
-
----
-
-# 🧪 **3.3. Soma de Discount**
-
-```sql
-SELECT SUM(REPLACE(Discount, ',', '.') + 0) FROM superstore;
-SELECT SUM(discount) FROM fact_sales;
-```
-
----
-
-# 🧪 **3.4. Soma de Profit**
-
-```sql
-SELECT SUM(REPLACE(Profit, ',', '.') + 0) FROM superstore;
-SELECT SUM(profit) FROM fact_sales;
-```
-
----
-
-# ✅ 4. Conferir se cada ID de dimensão corresponde exatamente ao da tabela original
-
-### Conferir Order ID
-
-```sql
-SELECT COUNT(*) AS diferencas
-FROM superstore s
-LEFT JOIN dim_order d
-    ON s.`Order ID` = d.order_id
-WHERE d.order_key IS NULL;
-```
-
-### Conferir Product ID
-
-```sql
-SELECT COUNT(*) AS diferencas
-FROM superstore s
-LEFT JOIN dim_product p
-    ON s.`Product ID` = p.product_id
-WHERE p.product_key IS NULL;
-```
-
-### Conferir Customer ID
-
-```sql
-SELECT COUNT(*) AS diferencas
-FROM superstore s
-LEFT JOIN dim_customer c
-    ON s.`Customer ID` = c.customer_id
-WHERE c.customer_key IS NULL;
-```
-
-➡ **Se todos retornarem 0, está tudo perfeito.**
-
----
-
-# ✅ 5. Conferir agregações por grupo
-
-Exemplo: total de vendas por estado.
-
-Superstore:
-
-```sql
-SELECT State, SUM(REPLACE(Sales, ',', '.') + 0)
-FROM superstore
-GROUP BY State;
-```
-
-Fato + Dimensão:
-
-```sql
-SELECT d.state, SUM(f.sales)
-FROM fact_sales f
-JOIN dim_customer d ON f.customer_key = d.customer_key
-GROUP BY d.state;
-```
-
-➡ Esses valores devem ser iguais.
-
----
-
-# 🎯 Resumo das validações essenciais
-
-| Validação                  | Objetivo                                              |
-| -------------------------- | ----------------------------------------------------- |
-| Count de linhas            | Verificar se nenhuma linha ficou de fora              |
-| Soma das métricas          | Garantir que os valores foram importados corretamente |
-| FK sem NULL                | Validar integridade com dimensões                     |
-| Conferir IDs nas dimensões | Garantir que todas as dimensões estão completas       |
-| Conferências por grupo     | Ver um exemplo prático de análise batendo             |
-
----
+| Validação                  | Resultado esperado |
+| -------------------------- | ------------------ |
+| Mesma quantidade de linhas | ✔                  |
+| Métricas iguais            | ✔                  |
+| FKs sem NULL               | ✔                  |
+| IDs íntegros nas dimensões | ✔                  |
+| Agregações equivalentes    | ✔                  |

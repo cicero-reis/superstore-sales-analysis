@@ -1,6 +1,6 @@
 # 📊 Superstore Sales Analysis
 
-**Projeto de Análise de Dados — Portfólio**
+**Projeto de Análise de Dados**
 
 ---
 
@@ -15,13 +15,9 @@ O foco principal é entender:
 * Como construir perguntas de negócio simples e objetivas
 * Como documentar bem o processo (Ask → Prepare → SOW → SMART)
 
-Este repositório é voltado para prática e portfólio de iniciantes.
-
 ---
 
 ## 🔹 **Perguntas de Negócio (Ask)**
-
-As perguntas escolhidas são simples, diretas e adequadas para quem está começando:
 
 1. **Como estão as vendas atualmente?**
 2. **Quais produtos vendem mais?**
@@ -32,7 +28,7 @@ As perguntas escolhidas são simples, diretas e adequadas para quem está começ
 
 ---
 
-## 🔹 **Objetivos SMART (Simples)**
+## 🔹 **SMART**
 
 * **S (Específico):** Identificar níveis atuais de vendas, lucro e produtos mais vendidos.
 * **M (Mensurável):** Medir quantidade vendida, total de vendas, total de lucro e impacto dos descontos.
@@ -82,10 +78,29 @@ Superstore-Sales-Analysis/
 │   
 ```
 
+## 🔹 **Star Schema**
+
+                 dim_customer
+                       ▲
+                       │
+                 ┌─────┼─────┐
+                 │     │     │
+           dim_product │  dim_order
+                 ▲     │     ▲
+                 │     │     │
+                 └─────┼─────┘
+                       │
+                  fact_sales
+                       │
+                       ▼
+                  dim_date
+
+---
+
 ## 🔹 **Entregáveis**
 
 * Tabela original corrigida
-* Tabelas dimensionais (dim_customer, dim_product, dim_order, 06_dim_date)
+* Tabelas dimensionais (dim_customer, dim_product, dim_order, dim_date)
 * Tabela fato (fact_sales)
 * Documentação clara (Ask, SMART, Prepare, SOW)
 * README estruturado para portfólio

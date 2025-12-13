@@ -1,48 +1,72 @@
-## Projeto: Análise de Vendas e Lucratividade — Superstore Sales (Kaggle)
+## 📊 **Projeto: Análise de Vendas e Lucratividade — Superstore Sales (Kaggle)**
 
-### **1. Parte Interessada / Analista**
-**Parte Interessada:** Equipe de Análise de Dados (Aluno/Estudante)
-**Analista:** Cicero Reis
+### 👤 **1. Parte Interessada / Analista**
 
-### **2. Propósito do Projeto**
-Entender a situação atual das vendas da empresa por meio de uma análise simples, respondendo perguntas essenciais sobre desempenho de vendas, produtos, clientes, regiões e impacto dos descontos.
+* **Parte Interessada:** Departamento de Vendas
+* **Analista Responsável:** **Cicero Reis**
 
-### **3. Escopo / Principais Atividades**
+---
 
-O projeto irá:
+### 🎯 **2. Propósito do Projeto**
 
-1. **Avaliar as vendas atuais** usando somatório de vendas e média.
+Realizar uma análise objetiva e direta para entender a situação atual das vendas da empresa — explorando desempenho, produtos, clientes, regiões, lucratividade e impacto dos descontos — utilizando o dataset *Superstore Sales*.
+
+---
+
+### 📌 **3. Escopo / Principais Atividades**
+
+O projeto incluirá:
+
+1. **Avaliar as vendas atuais** (total, média, tendência).
 2. **Identificar os produtos mais vendidos** (ranking simples).
-3. **Verificar se a empresa está tendo lucro** (lucro total e lucro médio).
-4. **Identificar os principais clientes** por valor de compras.
-5. **Descobrir onde mais vendemos** (região/estado/segmento).
-6. **Analisar se o desconto ajuda ou atrapalha** a lucratividade.
-7. Criar visualizações simples no Tableau para apoiar as respostas.
-8. Apresentar conclusões diretas seguindo as metas SMART definidas.
+3. **Descobrir se a empresa está tendo lucro** (total, média e distribuição).
+4. **Mapear os clientes mais importantes** (maior valor de compras).
+5. **Analisar onde as vendas são maiores** (região e estado).
+6. **Avaliar o efeito do desconto** na lucratividade.
+7. Criar **visualizações básicas no Tableau** para apoiar as respostas.
+8. Elaborar um **resumo final** com insights guiados por objetivos SMART.
 
-### **4. Este projeto NÃO inclui**
+---
+
+### 🚫 **4. Fora do Escopo**
+
+Este projeto **não inclui**:
+
 * Modelos estatísticos ou preditivos.
 * Machine Learning.
-* ETL avançado ou data cleaning complexo.
-* Automação de dashboards.
-* Métricas financeiras avançadas (ROI, CAC, etc.)
+* ETLs complexos ou pipelines automatizados.
+* Criação de dashboards avançados.
+* Métricas financeiras profundas (ROI, CAC etc.).
 
-### **5. Entregáveis**
-* Respostas diretas às 6 perguntas principais.
-* Gráficos simples no Tableau (vendas, lucro, produtos, clientes, regiões, desconto).
-* Um resumo final com insights básicos.
-* Arquivos ASK.md, SMART.md e SOW.md organizados no repositório.
+---
 
-### **6. Cronograma / Marcos Principais**
-| Etapa         | Descrição                               | Prazo  |
-| ------------- | --------------------------------------- | ------ |
-| Ask           | Definir perguntas                       | 1 dia  |
-| SMART         | Definir objetivos                       | 1 dia  |
-| SOW           | Definir escopo                          | 1 dia  |
-| Coleta        | Importar o dataset                      | 1 dia  |
-| Análise       | Calcular métricas e responder perguntas | 2 dias |
-| Visualização  | Criar gráficos no Tableau               | 2 dias |
-| Entrega Final | Revisão e documentação                  | 1 dia  |
+### 📦 **5. Entregáveis**
 
-### **7. Data Estimada de Conclusão**
-**7 a 10 dias** após início do projeto.
+* Respostas simples e objetivas às **6 perguntas principais**.
+* Gráficos essenciais (vendas, lucro, clientes, regiões, produtos, descontos).
+* Relatórios básicos organizados em:
+
+  * **ASK.md**
+  * **SMART.md**
+  * **SOW.md**
+* Um **resumo final** com conclusões da análise.
+
+---
+
+### 🗓️ **6. Cronograma / Marcos**
+
+| Etapa             | Descrição                               | Prazo  |
+| ----------------- | --------------------------------------- | ------ |
+| **Ask**           | Definir perguntas principais            | 1 dia  |
+| **SMART**         | Definir objetivos com o método SMART    | 1 dia  |
+| **SOW**           | Estruturar escopo e entregáveis         | 1 dia  |
+| **Coleta**        | Importar dataset                        | 1 dia  |
+| **Análise**       | Calcular métricas e responder perguntas | 2 dias |
+| **Visualização**  | Criar gráficos no Tableau               | 2 dias |
+| **Entrega Final** | Revisão + Documentação                  | 1 dia  |
+
+---
+
+### 📅 **7. Data Estimada de Conclusão**
+
+**Entre 7 e 10 dias** após o início oficial do projeto.

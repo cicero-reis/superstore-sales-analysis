@@ -1,4 +1,13 @@
-# ✅ **Passo 1 — Enteder o intervalo completo de datas do dataset**
+# 📅 **Dimensão de Datas (dim_date)**
+
+A **dim_date** é fundamental em qualquer modelo estrela.
+Ela permite análises por **ano, trimestre, mês, semana, dia**, além de facilitar cálculos como comparações históricas.
+
+---
+
+# 🧭 **1. Descobrir o intervalo completo de datas**
+
+Antes de gerar a dimensão, identifique o período que seu dataset cobre:
 
 ```sql
 SELECT 
@@ -8,13 +17,16 @@ SELECT
     MAX(ship_date_clean)  AS max_ship
 FROM superstore;
 ```
-```
-min_order |max_order |min_ship  |max_ship  |
-----------+----------+----------+----------+
-2014-01-03|2017-12-30|2014-01-07|2018-01-05|
-```
 
-# ✅ **Passo 2 — Criar a tabela `dim_date`**
+📌 **Resultado típico:**
+
+| min_order  | max_order  | min_ship   | max_ship   |
+| ---------- | ---------- | ---------- | ---------- |
+| 2014-01-03 | 2017-12-30 | 2014-01-07 | 2018-01-05 |
+
+---
+
+# 🗂️ **2. Criar a tabela `dim_date`**
 
 ```sql
 CREATE TABLE IF NOT EXISTS dim_date (
@@ -30,9 +42,18 @@ CREATE TABLE IF NOT EXISTS dim_date (
 );
 ```
 
+### 🔑 Por que `date_key` é inteiro?
+
+✔ Facilita joins
+✔ Ocupa menos espaço
+✔ É padrão em modelos estrela
+✔ Formato AAAAMMDD permite filtros rápidos
+
 ---
 
-# ✅ **Passo 3 — Gerar as datas **
+# 🔄 **3. Gerar o calendário completo**
+
+Usamos uma CTE recursiva para criar todas as datas do intervalo:
 
 ```sql
 SET SESSION cte_max_recursion_depth = 5000;
@@ -54,19 +75,19 @@ SELECT
     QUARTER(dt) AS quarter,
     MONTH(dt) AS month,
     MONTHNAME(dt) AS month_name,
-    WEEK(dt, 3) AS week,   -- ISO week (mode 3)
+    WEEK(dt, 3) AS week,   -- semana ISO
     DAY(dt) AS day,
     DAYNAME(dt) AS day_name
 FROM date_range;
 ```
 
-🔍 **Isso cria 1464 dias de dados (intervalo total)**.
+📌 **Isso gera 1464 linhas — uma por dia do intervalo.**
 
 ---
 
-# ❗ Caso o MySQL retorne erro de recursão
+# 🛠️ **4. Erro de profundidade recursiva?**
 
-Altere temporariamente:
+Use:
 
 ```sql
 SET cte_max_recursion_depth = 5000;
@@ -74,23 +95,12 @@ SET cte_max_recursion_depth = 5000;
 
 ---
 
-# ⚡ Quer relacionar `fact_sales.order_date` e `fact_sales.ship_date` com essa dimensão?
+# 🔗 **5. Como ligar a `fact_sales` com a `dim_date`**
 
-Quando for criar o fact, usaremos:
+Quando for montar a tabela fato:
 
 ```sql
-SELECT date_key 
-FROM dim_date 
+SELECT date_key
+FROM dim_date
 WHERE full_date = s.order_date_clean;
 ```
-
----
-
-Se quiser, posso gerar o script **completo do início ao fim**:
-
-* criar tabela
-* popular
-* validar
-* criar chaves estrangeiras na fact
-
-Deseja isso?
