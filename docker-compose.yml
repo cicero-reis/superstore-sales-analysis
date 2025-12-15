@@ -1,4 +1,27 @@
 services:
+
+  app:
+    image: ciceroreis/python3:v1
+    container_name: app
+    user: ${UID}:${GID}
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./app:/application
+    working_dir: /application
+    depends_on:
+      - mysql
+    networks:
+      - super_store_network
+  nginx:
+    image: ciceroreis/nginx:v1
+    container_name: nginx_proxy
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    networks:
+      - super_store_network
   mysql:
     image: mysql:8.0
     container_name: mysql
@@ -14,7 +37,6 @@ services:
     networks:
       - super_store_network
 
-
 networks:
   super_store_network:
     name: super_store_network
@@ -23,4 +45,4 @@ networks:
 volumes:
   super_store_data:
     name: super_store_data
-    driver: local  
+    driver: local

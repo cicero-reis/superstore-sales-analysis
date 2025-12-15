@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS dim_product (
 
 ## ✔ Opção 1 — Método simples: **DISTINCT**
 
-Usado quando não há divergências entre registros do mesmo produto.
+Usar quando não há divergências entre registros do mesmo produto.
 
 ```sql
 INSERT INTO dim_product (

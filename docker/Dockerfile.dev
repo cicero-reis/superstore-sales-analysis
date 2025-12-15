@@ -1,0 +1,57 @@
+FROM python:3.10-alpine
+
+LABEL maintainer="Cicero Reis"
+
+# Variáveis de ambiente
+ARG user=creis
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PATH=/home/$user/.local/bin:$PATH
+
+# Diretório de trabalho
+WORKDIR /application
+
+# Instala dependências do sistema necessárias
+RUN apk update && apk add --no-cache \
+    bash \
+    gcc \
+    musl-dev \
+    libffi-dev \
+    openssl-dev \
+    python3-dev \
+    build-base \
+    linux-headers \
+    rust \
+    cargo \
+    make \
+    g++ \
+    libstdc++
+
+# Atualiza pip, setuptools e wheel
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+
+# Copia e instala dependências Python
+COPY requirements.txt .
+
+# Instala dependências da aplicação e dev (linters)
+RUN pip install --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
+
+# Remove ferramentas de compilação para reduzir tamanho
+RUN apk del gcc build-base linux-headers rust cargo make g++
+
+# Cria usuário não-root
+RUN adduser -D $user && \
+    chown -R $user:$user /application && \
+    chmod -R 775 /application
+
+USER $user
+
+# Copia o restante da aplicação
+COPY . .
+
+# Expõe porta
+EXPOSE 8000
+
+# Comando padrão
+CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

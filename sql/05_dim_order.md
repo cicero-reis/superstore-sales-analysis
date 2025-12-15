@@ -61,7 +61,7 @@ Assumindo que você já criou e populou:
 
 # 🚀 **4. Inserir dados na dimensão**
 
-Usamos `ROW_NUMBER()` para garantir **um único registro por Order ID**, mesmo que o dataset tenha múltiplas linhas por pedido.
+Usar `ROW_NUMBER()` para garantir **um único registro por Order ID**, mesmo que o dataset tenha múltiplas linhas por pedido.
 
 ```sql
 INSERT INTO dim_order (

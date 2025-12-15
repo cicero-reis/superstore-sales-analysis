@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS dim_date (
 
 # 🔄 **3. Gerar o calendário completo**
 
-Usamos uma CTE recursiva para criar todas as datas do intervalo:
+Usar uma CTE recursiva para criar todas as datas do intervalo:
 
 ```sql
 SET SESSION cte_max_recursion_depth = 5000;

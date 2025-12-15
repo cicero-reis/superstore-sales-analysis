@@ -18,8 +18,7 @@ ADD COLUMN profit_clean DECIMAL(10,2);
 
 ## ✅ **2. Converter valores `VARCHAR` → `DECIMAL`**
 
-Substituímos vírgulas por pontos e aplicamos a conversão para decimal.
-O `WHERE` garante que apenas valores numéricos válidos sejam convertidos.
+Substituir vírgulas por pontos e aplicar a conversão para decimal.
 
 ```sql
 UPDATE superstore
