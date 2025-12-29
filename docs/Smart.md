@@ -1,3 +1,13 @@
+Excelente passo 👏
+O **Ask.md** é onde você mostra maturidade analítica: deixar claro **o problema**, **o recorte**, **as perguntas certas** e **o que não será respondido**.
+
+Abaixo está um **Ask.md totalmente alinhado** com o cenário atual
+👉 *Vendas por categoria em 2017*
+👉 linguagem de negócio
+👉 claro para stakeholders e para avaliadores técnicos.
+
+---
+
 # 🟦 Ask — Definição do Problema de Negócio
 
 ## 📌 Contexto

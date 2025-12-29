@@ -1,85 +1,173 @@
-# 📊 Superstore Sales Analysis
+# 📊 Superstore Sales Analysis — Vendas por Categoria (2017)
 
-**Projeto de Análise de Dados**
-
----
-
-## 🔹 **Descrição do Projeto**
-
-Este projeto utiliza o dataset **Superstore Sales** (Tableau) para estudar conceitos essenciais de análise de dados: limpeza, preparação, criação de perguntas, definição de objetivos SMART e organização dos dados em um modelo dimensional (*Star Schema*).
-
-O foco principal é entender:
-
-* Como preparar dados reais para análise
-* Como transformar dados brutos em informações úteis
-* Como construir perguntas de negócio simples e objetivas
-* Como documentar bem o processo (Ask → Prepare → SOW → SMART)
+**Análise de Dados com foco em Performance por Categoria**
 
 ---
 
-## 🔹 **Perguntas de Negócio (Ask)**
+## 🔹 Visão Geral
 
-1. **Como estão as vendas atualmente?**
-2. **Quais produtos vendem mais?**
-3. **A empresa está tendo lucro?**
-4. **Quem são nossos principais clientes?**
-5. **Onde vendemos mais?**
-6. **O desconto está ajudando ou atrapalhando?**
+Este projeto tem como objetivo analisar as vendas do ano de 2017,
+com foco em desempenho por categoria e comportamento temporal,
+fornecendo insights estratégicos para tomada de decisão executiva:
 
----
+* Office Supplies
+* Furniture
+* Technology
 
-## 🔹 **SMART**
-
-* **S (Específico):** Identificar níveis atuais de vendas, lucro e produtos mais vendidos.
-* **M (Mensurável):** Medir quantidade vendida, total de vendas, total de lucro e impacto dos descontos.
-* **A (Alcançável):** Utilizar apenas SQL e dados da Superstore.
-* **R (Relevante):** Informações essenciais para entender o desempenho básico da loja.
-* **T (Temporal):** Concluir a análise inicial até o final do estudo do módulo *Prepare*.
+O objetivo é oferecer aos **stakeholders** uma visão clara sobre **volume de vendas**, **distribuição**, **variabilidade** e **padrões de comportamento** entre as categorias ao longo do ano.
 
 ---
 
-## 🔹 **Tecnologias Utilizadas**
+## 🔹 Pergunta Central de Negócio
 
-* **MySQL 8** — limpeza, normalização e criação das tabelas dimensionais
-* **SQL** — consultas, CTEs e window functions
-* **Git / GitHub** — versionamento e portfólio
-* **(Opcional futuramente)** Tableau para visualização
-
-> Por enquanto, o projeto está focado nas fases **Ask** e **Prepare**.
+> **Como foi o desempenho de vendas por categoria no ano de 2017 e quais categorias concentram maior volume e estabilidade operacional?**
 
 ---
 
-## 🔹 **Estrutura do Repositório**
+## 🔹 Objetivos da Análise
+
+* Identificar quais categorias concentram maior volume de vendas em 2017
+* Avaliar a distribuição mensal de vendas por categoria
+* Entender o grau de variabilidade (estabilidade vs. volatilidade)
+* Apoiar decisões de priorização operacional e estratégica
+
+---
+
+## 🔹 Escopo da Análise
+
+* **Período:** Ano de 2017
+* **Métrica principal:** Quantidade vendida
+* **Nível de análise:** Categoria de produto
+* **Tipo de análise:** Estatística descritiva e análise exploratória
+
+> ⚠️ Este projeto **não avalia receita ou lucro**, apenas comportamento de volume, deixando explícita essa limitação para decisões futuras.
+
+---
+
+## 🔹 Abordagem Analítica
+
+A análise segue um processo estruturado:
+
+**Ask → Prepare → Process → Analyze → Share → Act**
+
+Com aplicação prática de:
+
+### 📌 Análise por Categoria
+
+* Frequência absoluta e relativa
+* Pareto (Classificação A, B e C)
+* Comparação entre categorias
+
+### 📌 Tendência Central
+
+* Média mensal
+* Mediana mensal
+* Moda (faixa de vendas mais frequente)
+
+### 📌 Dispersão e Variabilidade
+
+* Quartis (Q1, Q2, Q3, Q4)
+* Mínimo e Máximo
+* Amplitude
+* Variância
+* Desvio padrão
+
+Essas medidas permitem avaliar **não apenas quanto se vende**, mas **quão previsível e estável é cada categoria**.
+
+---
+
+## 🔹 Principais Insights (Resumo Executivo)
+
+* **Office Supplies**
+
+  * Maior volume de vendas em 2017
+  * Categoria Classe A no Pareto (≈62% do volume)
+  * Alta relevância operacional
+
+* **Furniture**
+
+  * Volume intermediário
+  * Maior variabilidade mensal
+  * Presença de meses extremos (outliers)
+
+* **Technology**
+
+  * Menor volume relativo
+  * Contribuição concentrada
+  * Potencial de análise futura por valor (receita/margem)
+
+> 🔎 A análise mostra que **volume não implica necessariamente estabilidade**, reforçando a importância de olhar além da média.
+
+---
+
+## 🔹 Tecnologias Utilizadas
+
+* **MySQL 8**
+
+  * Limpeza e modelagem dos dados
+  * CTEs e funções analíticas
+* **SQL**
+
+  * Análises estatísticas diretamente no banco
+* **Docker**
+
+  * Ambiente reprodutível
+* **Git / GitHub**
+
+  * Versionamento e portfólio
+
+---
+
+## 🔹 Estrutura do Repositório
 
 ```
 Superstore-Sales-Analysis/
 │
 ├── README.md
 │
-├── data/
+├── database/
 │   ├── superstore.csv
 │   ├── superstore.xls
-├── docker/
-│   ├── docker-compose.yml
-│   ├── mysql-init.sql
-│── docs/
+│
+├── docs/
+│   ├── Act.md
+│   ├── Analyze.md
 │   ├── Ask.md
-│   ├── SMART.md
+│   ├── ChangeLog.md
 │   ├── Prepare.md
-│   └── SOW.md
-├── sql/
-│   ├── 01_prepare_dates.sql
-│   ├── 02_prepare_numbers.sql
-│   ├── 03_dim_customer.sql
-│   ├── 04_dim_product.sql
-│   ├── 05_dim_order.sql
-│   ├── 06_dim_date.sql
-│   └── 07_fact_sales.sql
-│   
+│   ├── Process.md
+│   ├── Share.md
+│   ├── Smart.md
+│   ├── Sow.md
+│   └── Summary.md
+│
+├── prepare/
+│   ├── 01_prepare_dates.md
+│   ├── 02_prepare_numbers.md
+│   ├── 03_dim_customer.md
+│   ├── 04_dim_product.md
+│   ├── 05_dim_order.md
+│   ├── 06_dim_date.md
+│   └── 07_fact_sales.md
+│
+├── analyse/   
+│   ├── 01_profitability_by_category.md
+│   ├── 02_monthly_distribution.md
+│   ├── 03_media.md
+│   ├── 04_median.md
+│   ├── 05_moda.md
+│   ├── 06_quartiles.md
+│   ├── 07_min_max.md
+│   ├── 08_amplitude.md
+│   ├── 09_standard_deviation.md
+│   └── 10_variance.md
 ```
 
-## 🔹 **Star Schema**
+---
 
+## 🔹 Modelo Dimensional (Star Schema)
+
+```
                  dim_customer
                        ▲
                        │
@@ -94,20 +182,22 @@ Superstore-Sales-Analysis/
                        │
                        ▼
                   dim_date
+```
 
 ---
 
-## 🔹 **Entregáveis**
+## 🔹 Entregáveis
 
-* Tabela original corrigida
-* Tabelas dimensionais (dim_customer, dim_product, dim_order, dim_date)
-* Tabela fato (fact_sales)
-* Documentação clara (Ask, SMART, Prepare, SOW)
-* README estruturado para portfólio
+* Análise de vendas por categoria (2017)
+* Classificação Pareto
+* Análise estatística completa
+* Insights explicados com racional analítico
+* Documentação orientada a negócio
 
 ---
 
-## 🔹 **Autor**
+## 🔹 Autor
 
 **Cicero Reis**
 Analista de Dados em desenvolvimento
+Foco em SQL, Estatística Aplicada e Análise de Negócio
