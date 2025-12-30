@@ -1,109 +1,116 @@
-# 🟦 Ask — Definição do Problema de Negócio
+# 🟩 SMART — Objetivos da Análise
 
-## 📌 Contexto
+## 🎯 Objetivo Geral
 
-A empresa Superstore possui um portfólio diversificado de produtos distribuídos em três grandes categorias:
-
-* Office Supplies
-* Furniture
-* Technology
-
-Os dados históricos de vendas estão disponíveis, porém **não existe uma visão consolidada sobre como cada categoria performou ao longo do ano de 2017**, especialmente em termos de **volume**, **distribuição mensal** e **estabilidade operacional**.
-
-Antes de decisões estratégicas envolvendo investimento, estoque ou priorização comercial, é necessário entender **o comportamento real das vendas por categoria**.
+Analisar o desempenho de vendas por categoria no ano de **2017**, com foco em **volume**, **participação relativa** e **estabilidade ao longo do tempo**, para apoiar decisões estratégicas de priorização comercial e operacional.
 
 ---
 
-## 🎯 Problema de Negócio
+## 📌 Objetivos SMART
 
-> **Não está claro quais categorias de produtos concentraram maior volume de vendas em 2017, nem quão estáveis ou voláteis essas vendas foram ao longo do ano.**
+### 🔹 **S — Específico (Specific)**
 
-Sem essa compreensão:
+Avaliar **como cada categoria de produto performou em 2017**, identificando:
 
-* Há risco de priorizar categorias apenas por percepção
-* Decisões operacionais podem ser tomadas sem base em dados
-* Categorias instáveis podem estar mascaradas por médias gerais
+* Volume total de vendas por categoria
+* Participação percentual de cada categoria no total
+* Distribuição mensal das vendas
+* Estabilidade e variabilidade do volume ao longo do ano
 
----
-
-## ❓ Pergunta Principal (Ask)
-
-> **Como foi o desempenho de vendas por categoria no ano de 2017 e quais categorias concentraram maior volume e estabilidade ao longo do período?**
+> Escopo claramente definido: **Categorias + Ano de 2017 + Volume de vendas**
 
 ---
 
-## ❓ Perguntas Secundárias
+### 🔹 **M — Mensurável (Measurable)**
 
-1. **Qual categoria apresentou o maior volume de vendas em 2017?**
-2. **Qual a participação percentual de cada categoria no total de vendas?**
-3. **As vendas por categoria foram estáveis ou apresentaram grande variação mensal?**
-4. **Existem meses atípicos (picos ou quedas extremas) em alguma categoria?**
-5. **Quais categorias concentram a maior parte do volume (Princípio de Pareto)?**
+A análise será baseada em métricas quantitativas objetivas:
 
----
-
-## 📊 Métricas-Chave Definidas
-
-Para responder às perguntas acima, serão utilizadas:
-
-### 🔹 Volume
+#### 📊 Métricas de Volume
 
 * Quantidade total vendida
 * Frequência absoluta
 * Frequência relativa
-* Pareto (Classificação A, B e C)
+* Frequência acumulada
+* Classificação de Pareto (A, B, C)
 
-### 🔹 Tendência Central
+#### 📈 Métricas Estatísticas
 
 * Média mensal
 * Mediana mensal
-* Moda (faixa mais frequente de vendas)
-
-### 🔹 Dispersão
-
+* Moda (faixa de maior frequência)
 * Quartis (Q1, Q2, Q3, Q4)
-* Mínimo e Máximo
+* Mínimo e máximo
 * Amplitude
 * Variância
 * Desvio padrão
 
+Essas métricas permitem medir **nível**, **concentração** e **variabilidade** das vendas.
+
 ---
 
-## 🚧 O Que Está Fora do Escopo
+### 🔹 **A — Alcançável (Achievable)**
 
-Para manter foco e clareza analítica, **não fazem parte deste estudo**:
+Os objetivos são alcançáveis porque:
+
+* Os dados de vendas estão disponíveis no dataset Superstore
+* O modelo dimensional (*Star Schema*) já foi implementado
+* As análises serão realizadas exclusivamente com **SQL (MySQL 8)**
+* Não há dependência de fontes externas ou ferramentas avançadas
+
+---
+
+### 🔹 **R — Relevante (Relevant)**
+
+O objetivo é relevante para o negócio porque:
+
+* Permite identificar categorias críticas em volume
+* Apoia decisões de:
+
+  * Planejamento de estoque
+  * Priorização comercial
+  * Alocação de recursos operacionais
+* Evita decisões baseadas apenas em percepção ou médias gerais
+
+Além disso, cria uma **base sólida** para análises futuras de:
 
 * Receita
-* Lucro
 * Margem
-* Análise de clientes
-* Análise geográfica
-* Previsão de vendas
-
-> ⚠️ O estudo é intencionalmente focado em **volume de vendas**, preparando terreno para análises financeiras futuras.
+* Rentabilidade
+* Previsão de demanda
 
 ---
 
-## 🧠 Hipóteses Iniciais
+### 🔹 **T — Temporal (Time-bound)**
 
-* Uma ou duas categorias concentram a maior parte do volume total
-* Categorias de alto volume podem apresentar maior variabilidade
-* A média pode não representar bem o comportamento real das vendas mensais
+A análise está delimitada ao período de:
 
-Essas hipóteses serão **validadas ou refutadas** ao longo da análise.
+* **Ano de 2017**
 
----
+E será concluída:
 
-## ✅ Resultado Esperado
-
-Ao final da análise, espera-se:
-
-* Clareza sobre o desempenho de cada categoria em 2017
-* Identificação de categorias críticas por volume e variabilidade
-* Base analítica sólida para decisões futuras (estoque, foco comercial, investimento)
+* Após a execução das análises estatísticas descritivas
+* Com documentação completa das etapas **Ask → Prepare → Analyze**
 
 ---
 
-### 📌 Observação Final
+## ✅ Critérios de Sucesso
 
-Este documento orienta toda a análise e garante que **as consultas SQL, métricas estatísticas e insights gerados estejam alinhados a um objetivo de negócio claro**.
+A análise será considerada bem-sucedida se:
+
+* For possível identificar claramente:
+
+  * A categoria de maior volume
+  * A concentração das vendas (Pareto)
+  * Categorias mais estáveis vs. mais voláteis
+* As conclusões forem suportadas por métricas estatísticas
+* Os insights puderem ser compreendidos por stakeholders não técnicos
+
+---
+
+## 🧠 Alinhamento com o Negócio
+
+Este SMART garante que:
+
+* Cada consulta SQL responde a uma pergunta específica
+* Cada métrica tem um propósito claro
+* A análise gera **valor prático**, não apenas números
