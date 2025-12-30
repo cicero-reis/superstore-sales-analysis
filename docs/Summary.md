@@ -87,12 +87,3 @@ Esta análise avaliou o desempenho de vendas da Superstore em 2017, com foco em 
 
 A Superstore apresenta **bom desempenho em volume**, porém enfrenta **ineficiências claras na conversão de vendas em lucro**, especialmente na categoria Furniture e na gestão da sazonalidade. A aplicação de ajustes estratégicos focados em **rentabilidade, mix de produtos e planejamento temporal** pode gerar ganhos financeiros significativos sem necessidade imediata de aumento de volume.
 
----
-
-Se quiser, no próximo passo posso:
-
-* adaptar esse resumo para **apresentação executiva (1 slide)**
-* reduzir para um **one-pager**
-* ou alinhar o texto ao padrão de **relatório corporativo / consultoria**
-
-Você está fazendo **análise de dados de verdade**, não só rodando SQL.
