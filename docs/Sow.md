@@ -1,146 +1,82 @@
-# 📄 SOW — Statement of Work
+# 📄 Statement of Work (SOW)
 
-**Projeto:** Superstore Sales Analysis — Categorias (2017)
+## 📊 Projeto de Análise de Dados – Superstore Sales 2017
 
----
-
-## 🔹 1. Visão Geral do Projeto
-
-Este projeto tem como objetivo analisar o desempenho das **categorias de produtos** da empresa Superstore no **ano de 2017**, utilizando dados históricos de vendas.
-
-O trabalho segue um processo estruturado de análise de dados, aplicando conceitos de limpeza, modelagem, estatística descritiva e interpretação de resultados para apoiar **decisões de negócio baseadas em dados**.
+**Analista de Dados:** Cicero Reis
+**Cliente / Sponsor:** Stakeholders de Negócio – Superstore
+**Área:** Comercial / Estratégia / Financeiro
 
 ---
 
-## 🔹 2. Objetivo do Trabalho
+## 🎯 Propósito do Projeto
 
-Fornecer aos stakeholders uma **visão clara, confiável e orientada ao negócio** sobre:
+Este projeto tem como objetivo analisar o desempenho de vendas da Superstore no ano de 2017, com foco na **performance por categoria de produto** e no **comportamento temporal das vendas ao longo do ano**.
 
-* Como as vendas se distribuíram entre as categorias em 2017
-* Quais categorias concentram volume operacional
-* Quais categorias geram mais valor financeiro
-* O nível de estabilidade e variabilidade das vendas ao longo do ano
+A análise busca responder como as vendas se distribuíram entre as categorias, identificar diferenças de rentabilidade e compreender padrões de sazonalidade que impactam o planejamento operacional e financeiro.
 
----
+Os resultados apoiarão decisões estratégicas relacionadas a:
 
-## 🔹 3. Escopo do Projeto
-
-### ✅ Incluído no Escopo
-
-* Importação do dataset **Superstore Sales**
-* Limpeza e padronização de dados (datas e valores numéricos)
-* Modelagem dimensional (*Star Schema*)
-* Criação de tabelas:
-
-  * `dim_customer`
-  * `dim_product`
-  * `dim_order`
-  * `dim_date`
-  * `fact_sales`
-* Análise estatística descritiva:
-
-  * Frequência absoluta e relativa
-  * Pareto (ABC)
-  * Média, mediana e moda
-  * Quartis
-  * Amplitude, variância e desvio padrão
-* Análise focada nas **categorias de produtos em 2017**
-* Documentação completa do processo
+* Portfólio de produtos
+* Rentabilidade por categoria
+* Planejamento de estoque
+* Alocação de recursos ao longo do ano
 
 ---
 
-### ❌ Fora do Escopo
+## 🔍 Escopo / Principais Atividades do Projeto
 
-* Previsões de vendas (forecasting)
-* Modelos de machine learning
-* Análises em tempo real
-* Dados externos ao dataset Superstore
-* Recomendações estratégicas finais (fase Act)
-
----
-
-## 🔹 4. Stakeholders
-
-| Papel             | Interesse                                  |
-| ----------------- | ------------------------------------------ |
-| Gestão Comercial  | Entender desempenho por categoria          |
-| Planejamento      | Avaliar estabilidade e variabilidade       |
-| Operações         | Dimensionar volume e capacidade            |
-| Analista de Dados | Garantir qualidade e interpretação correta |
+| Atividade                       | Descrição                                                                                                  |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Coleta de Dados                 | Utilização do dataset Superstore contendo informações de pedidos, produtos, vendas, custos e datas         |
+| Preparação dos Dados            | Limpeza, padronização, modelagem dimensional e criação de tabelas fato e dimensões                         |
+| Análise de Vendas por Categoria | Avaliação de vendas, lucro, margem e rentabilidade por categoria                                           |
+| Análise Temporal                | Análise da distribuição mensal de vendas em 2017                                                           |
+| Análise Estatística             | Cálculo de média, mediana, moda (por faixa), quartis, mínimo, máximo, amplitude, desvio padrão e variância |
+| Geração de Insights             | Tradução dos resultados analíticos em insights acionáveis de negócio                                       |
+| Documentação e Comunicação      | Organização das análises e resultados em arquivos Markdown estruturados                                    |
 
 ---
 
-## 🔹 5. Metodologia
+## 🚫 Fora do Escopo do Projeto
 
-O projeto segue as etapas do **Processo de Análise de Dados**:
+Este projeto **não inclui**:
 
-1. **Ask** — Definição das perguntas de negócio
-2. **Prepare** — Limpeza, padronização e modelagem dos dados
-3. **Process** — Validação, consistência e transformação
-4. **Analyze** — Exploração estatística e geração de insights
-5. **Share** — Comunicação dos resultados *(planejado)*
-6. **Act** — Ações baseadas nos insights *(fora do escopo atual)*
-
----
-
-## 🔹 6. Entregáveis
-
-* Dataset limpo e estruturado
-* Modelo dimensional documentado
-* Consultas SQL versionadas
-* Documentos:
-
-  * Ask.md
-  * Smart.md
-  * Prepare.md
-  * Process.md
-  * Analyze.md
-  * SOW.md
-* README.md com visão executiva do projeto
+* Análise de anos diferentes de 2017
+* Implementação de ações, mudanças de preço ou ajustes operacionais
+* Análises preditivas ou modelos de machine learning
+* Integração com dados externos (marketing, campanhas, concorrência)
+* Avaliação de desempenho individual de vendedores ou clientes
 
 ---
 
-## 🔹 7. Cronograma (Estimado)
+## 📦 Entregáveis
 
-| Etapa   | Status         |
-| ------- | -------------- |
-| Ask     | Concluído      |
-| Prepare | Concluído      |
-| Process | Concluído      |
-| Analyze | Concluído      |
-| Share   | Planejado      |
-| Act     | Fora do escopo |
-
----
-
-## 🔹 8. Premissas e Restrições
-
-### Premissas
-
-* Os dados representam corretamente as vendas de 2017
-* Não há atualização contínua do dataset
-* O foco é análise exploratória e descritiva
-
-### Restrições
-
-* Análise limitada ao dataset fornecido
-* Resultados dependem da qualidade dos dados originais
-* Não há validação externa de mercado
+| Entregável                             | Descrição                                                      |
+| -------------------------------------- | -------------------------------------------------------------- |
+| Análise de Rentabilidade por Categoria | Documento com métricas de vendas, lucro e margem por categoria |
+| Distribuição Mensal de Vendas          | Análise da evolução das vendas mês a mês em 2017               |
+| Análises Estatísticas                  | Documentos com medidas de tendência central e dispersão        |
+| Insights Estratégicos                  | Identificação de riscos, oportunidades e recomendações         |
+| Executive Summary                      | Resumo executivo voltado a stakeholders                        |
+| Repositório Documentado                | Estrutura organizada com queries, análises e documentação      |
 
 ---
 
-## 🔹 9. Critérios de Sucesso
+## 🗓️ Visão Geral do Cronograma / Principais Marcos
 
-O projeto será considerado bem-sucedido se:
-
-* Os dados estiverem limpos e organizados
-* As análises forem reproduzíveis em SQL
-* Os insights forem compreensíveis para stakeholders não técnicos
-* A documentação permitir continuidade do projeto
+| Marco                  | Descrição                                     |
+| ---------------------- | --------------------------------------------- |
+| Revisão dos Dados      | Avaliação da estrutura e qualidade do dataset |
+| Preparação e Modelagem | Criação das tabelas dimensionais e fato       |
+| Análises Exploratórias | Análises iniciais por categoria e tempo       |
+| Análises Estatísticas  | Aplicação de métricas estatísticas            |
+| Geração de Insights    | Consolidação dos achados                      |
+| Documentação Final     | Organização dos arquivos e sumário executivo  |
 
 ---
 
-## 🔹 10. Responsável
+## 📅 Data Estimada de Conclusão
 
-**Cicero Reis**
-Analista de Dados em desenvolvimento
+> **Estimativa de conclusão:**
+> Data estimada considerando disponibilidade total dos dados e execução contínua das atividades analíticas.
+
