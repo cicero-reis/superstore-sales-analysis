@@ -40,50 +40,6 @@ Sem essa compreensão:
 4. **Existem meses atípicos (picos ou quedas extremas) em alguma categoria?**
 5. **Quais categorias concentram a maior parte do volume (Princípio de Pareto)?**
 
----
-
-## 📊 Métricas-Chave Definidas
-
-Para responder às perguntas acima, serão utilizadas:
-
-### 🔹 Volume
-
-* Quantidade total vendida
-* Frequência absoluta
-* Frequência relativa
-* Pareto (Classificação A, B e C)
-
-### 🔹 Tendência Central
-
-* Média mensal
-* Mediana mensal
-* Moda (faixa mais frequente de vendas)
-
-### 🔹 Dispersão
-
-* Quartis (Q1, Q2, Q3, Q4)
-* Mínimo e Máximo
-* Amplitude
-* Variância
-* Desvio padrão
-
----
-
-## 🚧 O Que Está Fora do Escopo
-
-Para manter foco e clareza analítica, **não fazem parte deste estudo**:
-
-* Receita
-* Lucro
-* Margem
-* Análise de clientes
-* Análise geográfica
-* Previsão de vendas
-
-> ⚠️ O estudo é intencionalmente focado em **volume de vendas**, preparando terreno para análises financeiras futuras.
-
----
-
 ## ✅ Resultado Esperado
 
 Ao final da análise, espera-se:
