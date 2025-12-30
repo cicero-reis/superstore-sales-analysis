@@ -92,15 +92,3 @@ Use:
 ```sql
 SET cte_max_recursion_depth = 5000;
 ```
-
----
-
-# 🔗 **5. Como ligar a `fact_sales` com a `dim_date`**
-
-Quando for montar a tabela fato:
-
-```sql
-SELECT date_key
-FROM dim_date
-WHERE full_date = s.order_date_clean;
-```

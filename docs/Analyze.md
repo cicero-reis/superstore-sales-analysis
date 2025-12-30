@@ -11,8 +11,6 @@ Objetivo da análise e escopo (vendas por categoria em 2017).
 - Lucro
 - Margem
 
-### 2.1 Destaque: Furniture
-
 ---
 
 ## 3. Distribuição Temporal das Vendas
@@ -38,7 +36,7 @@ Objetivo da análise e escopo (vendas por categoria em 2017).
 
 ## 5. Insights de Negócio (Conclusão)
 
-### Insight 1 — Rentabilidade Crítica da Categoria Furniture
+### Insight 1 — Rentabilidade Crítica da Categoria
 - Fato
 - Impacto
 - Ação sugerida

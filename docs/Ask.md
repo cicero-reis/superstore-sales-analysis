@@ -84,16 +84,6 @@ Para manter foco e clareza analítica, **não fazem parte deste estudo**:
 
 ---
 
-## 🧠 Hipóteses Iniciais
-
-* Uma ou duas categorias concentram a maior parte do volume total
-* Categorias de alto volume podem apresentar maior variabilidade
-* A média pode não representar bem o comportamento real das vendas mensais
-
-Essas hipóteses serão **validadas ou refutadas** ao longo da análise.
-
----
-
 ## ✅ Resultado Esperado
 
 Ao final da análise, espera-se:

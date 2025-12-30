@@ -40,10 +40,6 @@ FROM superstore
 LIMIT 20;
 ```
 
-Você deve ver as datas limpas no formato **YYYY-MM-DD**.
-
----
-
 ## 🧹 **4. (Opcional) Remover as colunas antigas**
 
 Somente execute quando tiver certeza de que todas as conversões estão corretas.
