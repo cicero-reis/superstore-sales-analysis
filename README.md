@@ -159,8 +159,11 @@ Superstore-Sales-Analysis/
 │
 ├── README.md
 │
-├── app/
+├── llm/
 │   ├── FastApi/langChain/LLM
+│
+├── dashboard/
+│   ├── streamlit
 │
 ├── database/
 │   ├── superstore.csv
