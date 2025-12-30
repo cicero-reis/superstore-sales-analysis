@@ -7,7 +7,7 @@ services:
     ports:
       - "8001:8000"
     volumes:
-      - ./app:/application
+      - ./llm:/application
     working_dir: /application
     depends_on:
       - mysql
