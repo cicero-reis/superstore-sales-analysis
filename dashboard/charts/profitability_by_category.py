@@ -3,19 +3,9 @@ import plotly.express as px
 
 def render_overview_page(df_kpi):
 
-    st.title("📌 Visão Geral")
-    st.subheader("Análise de Rentabilidade por Categoria (2017)")
+    st.title("📌 Visão Geral - Análise de Rentabilidade por Categoria (2017)")
 
-    st.markdown(
-        """
-        - **Technology** apresenta o maior valor agregado ao negócio, combinando alto faturamento,
-        excelente margem (19%) e lucro por unidade elevado.
-        - **Office Supplies** lidera em volume, mas com rentabilidade inferior,
-        indicando necessidade de foco em eficiência operacional.
-        - **Furniture** apresenta um claro desequilíbrio entre volume, receita e lucro,
-        sugerindo problemas de precificação, custos ou mix de produtos.
-        """
-    )
+    st.subheader("Tecnology, Office Supplies and Furniture")    
 
     rank_colors = ["#1f77b4", "#2ca02c", "#d62728"]
 
@@ -181,9 +171,8 @@ def render_overview_page(df_kpi):
 
     st.markdown(
         """
-        📌 Conclusão Executiva — 2017
-        - Technology é a principal alavanca de valor do negócio.
-        - Office Supplies sustenta escala com margem controlada.
-        - Furniture requer revisão imediata de estratégia.
+        - Technology apresenta o maior valor agregado ao negócio, combinando alto faturamento, excelente margem (19%) e lucro por unidade elevado.
+        - Office Supplies lidera em volume, mas com rentabilidade inferior, indicando necessidade de foco em eficiência operacional.
+        - Furniture apresenta um claro desequilíbrio entre volume, receita e lucro, sugerindo problemas de precificação, custos ou mix de produtos.
         """
     )

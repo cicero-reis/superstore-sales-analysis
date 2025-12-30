@@ -1,7 +1,7 @@
 import streamlit as st
 from services.kpi_service import get_kpis_by_category
 from services.database import engine
-from charts.render_overview_page import render_overview_page
+from charts.profitability_by_category import render_overview_page
 
 # --------------------------------------------------
 # Configuração geral da página
