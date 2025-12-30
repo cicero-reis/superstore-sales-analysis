@@ -1,57 +1,45 @@
-FROM python:3.10-alpine
+FROM python:3.10-slim
 
 LABEL maintainer="Cicero Reis"
 
-# Variáveis de ambiente
 ARG user=creis
+
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PATH=/home/$user/.local/bin:$PATH
 
-# Diretório de trabalho
 WORKDIR /application
 
-# Instala dependências do sistema necessárias
-RUN apk update && apk add --no-cache \
-    bash \
+# Dependências do sistema (científico + build)
+RUN apt-get update && apt-get install -y \
+    build-essential \
     gcc \
-    musl-dev \
-    libffi-dev \
-    openssl-dev \
-    python3-dev \
-    build-base \
-    linux-headers \
-    rust \
-    cargo \
-    make \
     g++ \
-    libstdc++
+    curl \
+    libffi-dev \
+    libssl-dev \
+    && rm -rf /var/lib/apt/lists/*
 
-# Atualiza pip, setuptools e wheel
-RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+# Atualiza pip
+RUN pip install --upgrade pip setuptools wheel
 
-# Copia e instala dependências Python
+# Copia dependências
 COPY requirements.txt .
 
-# Instala dependências da aplicação e dev (linters)
-RUN pip install --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt
-
-# Remove ferramentas de compilação para reduzir tamanho
-RUN apk del gcc build-base linux-headers rust cargo make g++
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Cria usuário não-root
-RUN adduser -D $user && \
-    chown -R $user:$user /application && \
-    chmod -R 775 /application
+RUN useradd -m $user && \
+    chown -R $user:$user /application
 
 USER $user
 
-# Copia o restante da aplicação
+# Copia aplicação
 COPY . .
 
-# Expõe porta
+# Portas (FastAPI + Streamlit)
 EXPOSE 8000
+EXPOSE 8501
 
-# Comando padrão
-CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+# CMD neutro (será sobrescrito no docker-compose)
+CMD ["python", "-c", "print('Use docker-compose para definir o serviço')"]
