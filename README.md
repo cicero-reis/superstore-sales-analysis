@@ -6,28 +6,33 @@
 
 ## 🔹 Visão Geral
 
-Este projeto tem como objetivo analisar as vendas do ano de 2017,
-com foco em desempenho por categoria e comportamento temporal,
-fornecendo insights estratégicos para tomada de decisão executiva:
+Este projeto tem como objetivo analisar as **vendas do ano de 2017**, com foco no **desempenho por categoria de produto** e no **comportamento temporal das vendas**, fornecendo insights estratégicos para apoio à tomada de decisão executiva.
 
-* Office Supplies
-* Furniture
-* Technology
+Categorias analisadas:
 
-O objetivo é oferecer aos **stakeholders** uma visão clara sobre **volume de vendas**, **distribuição**, **variabilidade** e **padrões de comportamento** entre as categorias ao longo do ano.
+* **Office Supplies**
+* **Furniture**
+* **Technology**
+
+A análise busca oferecer aos **stakeholders** uma visão clara sobre:
+
+* Volume de vendas
+* Distribuição mensal
+* Variabilidade e estabilidade operacional
+* Padrões estatísticos de comportamento ao longo do ano
 
 ---
 
 ## 🔹 Pergunta Central de Negócio
 
-> **Como foi o desempenho de vendas por categoria no ano de 2017 e quais categorias concentram maior volume e estabilidade operacional?**
+> **Como foi o desempenho de vendas por categoria no ano de 2017 e quais categorias concentram maior volume e maior estabilidade operacional?**
 
 ---
 
 ## 🔹 Objetivos da Análise
 
 * Identificar quais categorias concentram maior volume de vendas em 2017
-* Avaliar a distribuição mensal de vendas por categoria
+* Avaliar a distribuição mensal das vendas
 * Entender o grau de variabilidade (estabilidade vs. volatilidade)
 * Apoiar decisões de priorização operacional e estratégica
 
@@ -40,31 +45,33 @@ O objetivo é oferecer aos **stakeholders** uma visão clara sobre **volume de v
 * **Nível de análise:** Categoria de produto
 * **Tipo de análise:** Estatística descritiva e análise exploratória
 
-> ⚠️ Este projeto **não avalia receita ou lucro**, apenas comportamento de volume, deixando explícita essa limitação para decisões futuras.
+> ⚠️ **Limitação do projeto:**
+> Este estudo **não avalia receita ou lucro**, focando exclusivamente no comportamento do **volume de vendas**. Análises financeiras ficam como etapa futura.
 
 ---
 
 ## 🔹 Abordagem Analítica
 
-A análise segue um processo estruturado:
+A análise segue um processo estruturado inspirado no ciclo analítico:
 
 **Ask → Prepare → Process → Analyze → Share → Act**
 
-Com aplicação prática de:
+Foram aplicados conceitos práticos de **estatística descritiva diretamente em SQL**, garantindo rastreabilidade e clareza metodológica.
 
 ### 📌 Análise por Categoria
 
 * Frequência absoluta e relativa
-* Pareto (Classificação A, B e C)
+* Frequência acumulada
+* Classificação Pareto (A, B, C)
 * Comparação entre categorias
 
-### 📌 Tendência Central
+### 📌 Medidas de Tendência Central
 
 * Média mensal
 * Mediana mensal
 * Moda (faixa de vendas mais frequente)
 
-### 📌 Dispersão e Variabilidade
+### 📌 Medidas de Dispersão e Variabilidade
 
 * Quartis (Q1, Q2, Q3, Q4)
 * Mínimo e Máximo
@@ -72,7 +79,7 @@ Com aplicação prática de:
 * Variância
 * Desvio padrão
 
-Essas medidas permitem avaliar **não apenas quanto se vende**, mas **quão previsível e estável é cada categoria**.
+Essas medidas permitem avaliar **não apenas quanto se vende**, mas **quão previsível e estável é cada categoria ao longo do tempo**.
 
 ---
 
@@ -81,22 +88,49 @@ Essas medidas permitem avaliar **não apenas quanto se vende**, mas **quão prev
 * **Office Supplies**
 
   * Maior volume de vendas em 2017
-  * Categoria Classe A no Pareto (≈62% do volume)
-  * Alta relevância operacional
+  * Categoria Classe A no Pareto (≈62% do volume total)
+  * Alta relevância operacional e previsibilidade
 
 * **Furniture**
 
   * Volume intermediário
-  * Maior variabilidade mensal
-  * Presença de meses extremos (outliers)
+  * Alta variabilidade mensal
+  * Presença de meses extremos (outliers), indicando instabilidade operacional
 
 * **Technology**
 
   * Menor volume relativo
-  * Contribuição concentrada
-  * Potencial de análise futura por valor (receita/margem)
+  * Contribuição concentrada em poucos períodos
+  * Potencial para análises futuras por valor (receita e margem)
 
-> 🔎 A análise mostra que **volume não implica necessariamente estabilidade**, reforçando a importância de olhar além da média.
+> 🔎 A análise demonstra que **alto volume não implica necessariamente estabilidade**, reforçando a importância de olhar além da média.
+
+---
+
+## 🔹 Uso de IA como Apoio Analítico
+
+A IA generativa foi utilizada exclusivamente como ferramenta de apoio, após a realização das análises estatísticas e consultas SQL.
+
+### ✔️ Como a IA foi utilizada
+
+* Apoiar a síntese de insights
+* Melhorar a clareza da comunicação executiva
+* Servir como revisão crítica do raciocínio analítico
+
+### ❌ O que NÃO foi feito pela IA
+
+* Nenhuma métrica estatística foi calculada pela IA
+* Nenhuma consulta SQL foi gerada automaticamente
+* Nenhuma decisão analítica foi tomada sem validação nos dados
+
+Todas as análises estatísticas, consultas SQL e interpretações de negócio foram desenvolvidas **manualmente**, com a IA atuando apenas como **suporte cognitivo e revisão crítica**.
+
+**Tecnologias de IA utilizadas:**
+
+* **LangChain**
+* **LLM Gemini**
+
+> 🔎 A abordagem reflete um uso responsável e profissional de IA, alinhado às práticas atuais do mercado.
 
 ---
 
@@ -104,11 +138,11 @@ Essas medidas permitem avaliar **não apenas quanto se vende**, mas **quão prev
 
 * **MySQL 8**
 
-  * Limpeza e modelagem dos dados
+  * Limpeza, modelagem e análise dos dados
   * CTEs e funções analíticas
 * **SQL**
 
-  * Análises estatísticas diretamente no banco
+  * Estatística aplicada diretamente no banco
 * **Docker**
 
   * Ambiente reprodutível
@@ -150,7 +184,7 @@ Superstore-Sales-Analysis/
 │   ├── 06_dim_date.md
 │   └── 07_fact_sales.md
 │
-├── analyse/   
+├── analyse/
 │   ├── 01_profitability_by_category.md
 │   ├── 02_monthly_distribution.md
 │   ├── 03_media.md
@@ -190,7 +224,7 @@ Superstore-Sales-Analysis/
 
 * Análise de vendas por categoria (2017)
 * Classificação Pareto
-* Análise estatística completa
+* Análise estatística descritiva completa
 * Insights explicados com racional analítico
 * Documentação orientada a negócio
 
@@ -200,4 +234,4 @@ Superstore-Sales-Analysis/
 
 **Cicero Reis**
 Analista de Dados em desenvolvimento
-Foco em SQL, Estatística Aplicada e Análise de Negócio
+Foco em **SQL**, **Estatística Aplicada** e **Análise de Negócio**

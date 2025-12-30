@@ -13,6 +13,9 @@ Analise os dados considerando:
 - Amplitude das Vendas Mensais
 - Desvio Padrão das Vendas Mensais
 - Variância das Vendas Mensais
+- Não invente métricas
+- Não faça suposições fora dos dados fornecidos
+- Se algo não puder ser concluído, deixe explícito
 
 Gere um insight claro, objetivo e acionável para stakeholders,
 no formato:
