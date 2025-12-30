@@ -1,10 +1,3 @@
-Perfeito.
-O **SOW (Statement of Work)** é onde você mostra **maturidade profissional**: deixa claro *o que será feito, como, por quem, quando e com quais limites*. Pouquíssimos projetos de portfólio têm isso — e isso te diferencia muito.
-
-Abaixo está um **SOW.md completo**, alinhado ao seu projeto, ao foco em **Categorias em 2017**, e ao framework **Google Data Analytics**.
-
----
-
 # 📄 SOW — Statement of Work
 
 **Projeto:** Superstore Sales Analysis — Categorias (2017)
