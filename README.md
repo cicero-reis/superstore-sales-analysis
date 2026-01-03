@@ -236,6 +236,12 @@ Superstore-Sales-Analysis/
 
 ---
 
+## 🚀 Demonstração
+
+![Demo do projeto](assets/demo.gif)
+
+---
+
 ## 🔹 Autor
 
 **Cicero Reis**
