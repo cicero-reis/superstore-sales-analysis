@@ -1,11 +1,8 @@
 import streamlit as st
-import plotly.express as px    
+import plotly.express as px
+from utils.formatting import abbreviate_number
 
 def render_overview_page(df_kpi):
-
-    st.title("📌 Visão Geral - Análise de Rentabilidade por Categoria (2017)")
-
-    st.subheader("Tecnology, Office Supplies and Furniture")    
 
     rank_colors = ["#1f77b4", "#2ca02c", "#d62728"]
 
@@ -16,7 +13,7 @@ def render_overview_page(df_kpi):
         df_sales,
         x="category",
         y="total_sales",
-        text=df_sales["total_sales"].apply(lambda x: f"${x:,.0f}"),
+        text=df_sales["total_sales"].apply(lambda x: f"${abbreviate_number(x)}"),  # aqui usamos abbreviate_number
         labels={
             "category": "Categoria",
             "total_sales": "Receita Total"
@@ -24,7 +21,8 @@ def render_overview_page(df_kpi):
         color="category",
         color_discrete_sequence=df_sales["color"],
         title="Receita Total por Categoria — 2017"
-    )
+)
+
 
     fig_sales.update_layout(
         xaxis_title=None,
@@ -35,12 +33,9 @@ def render_overview_page(df_kpi):
 
     st.plotly_chart(fig_sales, use_container_width=True)
 
-
     # =========================
     # Lucro por Categoria
     # =========================
-
-    st.subheader("💰 Lucro Total por Categoria (2017)")
 
     # Ordena para reforçar narrativa visual
     df_profit = df_kpi.sort_values("total_profit", ascending=False).reset_index(drop=True)
@@ -74,7 +69,7 @@ def render_overview_page(df_kpi):
     # Volume Vendido por Categoria
     # =========================
 
-    st.subheader("📦 Volume Vendido por Categoria (2017)")
+    #st.subheader("📦 Volume Vendido por Categoria (2017)")
 
     # Ordena por volume
     df_volume = df_kpi.sort_values("total_quantity", ascending=False).reset_index(drop=True)
@@ -107,7 +102,7 @@ def render_overview_page(df_kpi):
     # Margem de Lucro por Categoria
     # =========================
 
-    st.subheader("📈 Margem de Lucro por Categoria (2017)")
+    #st.subheader("📈 Margem de Lucro por Categoria (2017)")
 
     # Ordena por margem
     df_margin = df_kpi.sort_values("profit_margin", ascending=False).reset_index(drop=True)
@@ -141,7 +136,7 @@ def render_overview_page(df_kpi):
     # Lucro por Unidade por Categoria
     # =========================
 
-    st.subheader("💰 Lucro por Unidade por Categoria (2017)")
+    #st.subheader("💰 Lucro por Unidade por Categoria (2017)")
 
     df_unit_profit = df_kpi.sort_values("profit_per_unit", ascending=False).reset_index(drop=True)
     df_unit_profit["color"] = rank_colors[:len(df_unit_profit)]
@@ -168,11 +163,3 @@ def render_overview_page(df_kpi):
     )
 
     st.plotly_chart(fig_unit_profit, use_container_width=True)
-
-    st.markdown(
-        """
-        - Technology apresenta o maior valor agregado ao negócio, combinando alto faturamento, excelente margem (19%) e lucro por unidade elevado.
-        - Office Supplies lidera em volume, mas com rentabilidade inferior, indicando necessidade de foco em eficiência operacional.
-        - Furniture apresenta um claro desequilíbrio entre volume, receita e lucro, sugerindo problemas de precificação, custos ou mix de produtos.
-        """
-    )
