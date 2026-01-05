@@ -14,7 +14,7 @@ from services.query import (
 
 )
 
-def get_rentabilidade_critica_por_categoria(engine, year: int):
+def get_receita_total_por_categoria(engine, year: int):
     with engine.connect() as conn:
         df = pd.read_sql(
             sql=query_rentabilidade_critica_por_categoria,

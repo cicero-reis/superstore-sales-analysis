@@ -178,8 +178,7 @@ Superstore-Sales-Analysis/
 │   ├── Process.md
 │   ├── Share.md
 │   ├── Smart.md
-│   ├── Sow.md
-│   └── Summary.md
+│   └── Sow.md
 │
 ├── prepare/
 │   ├── 01_prepare_dates.md

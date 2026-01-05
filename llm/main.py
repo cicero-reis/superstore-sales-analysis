@@ -6,6 +6,7 @@ from langchain.schema import AIMessage
 
 from database import get_db
 from template.insights_analysis_prompt import insights_analysis_prompt
+from template.rentabilidade_critica_por_categoria import insights_rentabilidade_critica_por_categoria
 from config import GOOGLE_API_KEY, DEFAULT_MODEL
 from query import (
     query_rentabilidade_critica_por_categoria,
@@ -38,8 +39,6 @@ def extract_text(response) -> str:
 
 @app.get("/analysis/health")
 def health_check(db: Session = Depends(get_db)):
-
-    rentabilidade_critica_por_categoria_result = db.execute(query_rentabilidade_critica_por_categoria, {"year": 2017}).fetchall()
     query_distribuicao_mensal_de_vendas_result = db.execute(query_distribuicao_mensal_de_vendas, {"year": 2017}).fetchall()
     query_media_result = db.execute(query_media, {"year": 2017}).fetchall()
     query_mediana_result = db.execute(query_mediana, {"year": 2017}).fetchall()
@@ -51,7 +50,6 @@ def health_check(db: Session = Depends(get_db)):
     query_variancia_result = db.execute(query_variancia, {"year": 2017}).fetchall()
 
     result = {
-        "rentabilidade_critica_por_categoria": [dict(row) for row in rentabilidade_critica_por_categoria_result[:]],
         "distribuicao_mensal_de_vendas": [dict(row) for row in query_distribuicao_mensal_de_vendas_result[:]],
         "media": [dict(row) for row in query_media_result[:]],
         "mediana": [dict(row) for row in query_mediana_result[:]],
@@ -64,6 +62,27 @@ def health_check(db: Session = Depends(get_db)):
     }
 
     prompt = insights_analysis_prompt.format_prompt(
+        data=result
+    ).to_string()
+
+    # Chama o LLM
+    response = llm.invoke(prompt)
+
+    # Extrai apenas o texto
+    text_response = extract_text(response)
+
+    return {"insights": text_response}
+
+@app.get("/analysis/rentabilidade-critica-por-categoria")
+def router_rentabilidade_critica_por_categoria(db: Session = Depends(get_db)):
+
+    rentabilidade_critica_por_categoria_result = db.execute(query_rentabilidade_critica_por_categoria, {"year": 2017}).fetchall()
+
+    result = {
+        "rentabilidade_critica_por_categoria": [dict(row) for row in rentabilidade_critica_por_categoria_result[:]]
+    }
+
+    prompt = insights_rentabilidade_critica_por_categoria.format_prompt(
         data=result
     ).to_string()
 

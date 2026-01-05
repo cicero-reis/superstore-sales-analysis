@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from services.kpi_service import (
-    get_rentabilidade_critica_por_categoria,
+    get_receita_total_por_categoria,
     get_distribuicao_mensal_de_vendas,
     get_media,
     get_median,
@@ -15,10 +15,28 @@ from services.kpi_service import (
     get_desvio_padrao
 )
 from services.database import engine
-from charts.profitability_by_category import render_overview_page
-from charts.monthly_distribution import render_monthly_distribution_page
+# Charts
+from charts.receita_total_por_categoria import (
+    render_receita_total_por_categoria_markdown,
+    render_receita_total_por_categoria_chart
+)
+from charts.lucro_total_por_categoria import (
+    render_lucro_total_por_categoria_markdown,
+    render_lucro_total_por_categoria_chart
+)
+from charts.quantidade_total_por_vendida_por_categoria import (
+    render_quantidade_total_por_vendida_por_categoria_markdown,
+    render_quantidade_total_por_vendida_por_categoria_chart
+)
+from charts.margem_de_lucro_por_categoria import (
+    render_margem_de_lucro_por_categoria_markdown,
+    render_margem_de_lucro_por_categoria_chart
+)
+from charts.lucro_por_unidade_por_categoria import (
+    render_lucro_por_unidade_por_categoria_markdown,
+    render_lucro_por_unidade_por_categoria_chart
+)
 from charts.summary import render_summary_page
-from utils.formatting import abbreviate_number
 
 # --------------------------------------------------
 # Configuração geral da página
@@ -47,7 +65,7 @@ Analista de Dados em desenvolvimento
 # --------------------------------------------------
 # Carregar dados
 # --------------------------------------------------
-df_rentabilidade_critica_por_categoria = get_rentabilidade_critica_por_categoria(engine, year=2017)
+df_receita_total_por_categoria = get_receita_total_por_categoria(engine, year=2017)
 df_distribuicao_mensal_de_vendas = get_distribuicao_mensal_de_vendas(engine, year=2017)
 df_media = get_media(engine, year=2017)
 df_median = get_median(engine, year=2017)
@@ -61,47 +79,45 @@ df_desvio_padrao = get_desvio_padrao(engine, year=2017)
 # --------------------------------------------------
 # Bloco 1 — Resumo Executivo
 # --------------------------------------------------
-render_summary_page(df_rentabilidade_critica_por_categoria)
-
+render_summary_page(df_receita_total_por_categoria)
 st.markdown("---")
 
 # ---------------------------
-# Bloco 2 — Valor por Categoria
+# Bloco 2 — Receita Total por Categoria
 # ---------------------------
-st.subheader("💰 Valor Gerado por Categoria")
 col1, col2 = st.columns([1, 2])
-
 with col1:
-    st.markdown("""
-        A categoria **Furniture** apresentou **alto volume de vendas ($215 mil)**, porém **rentabilidade crítica**, com:
-
-        * Margem de lucro de apenas **1%**
-        * Lucro total de **$3.018**
-        * Lucro por unidade de **$1,24**
-
-        ➡️ Em contraste:
-
-        * **Technology**: margem de **19%**
-        * **Office Supplies**: margem de **16%**
-
-        📌 **Conclusão:** Furniture consome recursos relevantes, mas gera retorno financeiro mínimo, reduzindo a lucratividade global do negócio.
-
-        ---
-
-        Forte Dependência Operacional de Office Supplies
-
-        * **Office Supplies** respondeu por **62% do volume total vendido** em 2017.
-        * Furniture e Technology juntas somam apenas 39% do volume.
-
-        📌 **Conclusão:** O negócio possui **alta dependência operacional** de uma única categoria em termos de volume, o que aumenta o risco operacional e exige eficiência máxima nessa área.
-        
-    """)
-
-    st.info("Insight: Avaliar alocação de recursos por categoria aumenta a rentabilidade.")    
-
+    render_receita_total_por_categoria_markdown()
 with col2:
-    render_overview_page(df_rentabilidade_critica_por_categoria)
+    render_receita_total_por_categoria_chart(df_receita_total_por_categoria)
+st.markdown("---")
 
+col1, col2 = st.columns([2, 1])
+with col1:
+    render_lucro_total_por_categoria_chart(df_receita_total_por_categoria)
+with col2:
+    render_lucro_total_por_categoria_markdown()
+st.markdown("---")
+
+col1, col2 = st.columns([1, 2])
+with col1:
+    render_quantidade_total_por_vendida_por_categoria_markdown()
+with col2:
+    render_quantidade_total_por_vendida_por_categoria_chart(df_receita_total_por_categoria)
+st.markdown("---")
+
+col1, col2 = st.columns([2, 1])
+with col1:
+    render_margem_de_lucro_por_categoria_chart(df_receita_total_por_categoria)
+with col2:
+    render_margem_de_lucro_por_categoria_markdown()
+st.markdown("---")
+
+col1, col2 = st.columns([1, 2])
+with col1:
+    render_lucro_por_unidade_por_categoria_markdown()
+with col2:
+    render_lucro_por_unidade_por_categoria_chart(df_receita_total_por_categoria)
 st.markdown("---")
 
 # --- Dados ---
@@ -111,13 +127,12 @@ df_faixa = pd.DataFrame({
 })
 
 # --- Layout premium ---
-st.header("📦 Distribuição de Quantidade de Vendas por Produto")
 
 col1, col2 = st.columns([1,2])
 
 with col1:
     st.markdown(f"""
-    **💡 Estatísticas rápidas**  
+    **💡 Dados Estatísticos**  
     - Média mensal: {df_media.avg_monthly_quantity.mean():.0f} unidades  
     - Mediana: {df_median.median_quantity.mean():.0f} unidades  
     - Mínimo: {df_min_max.min_quantity.min():.0f} unidades  
@@ -125,7 +140,10 @@ with col1:
     - Amplitude: {df_amplitude.amplitude.mean():.0f} unidades 
     - Desvio padrão: {df_desvio_padrao.stddev_quantity.mean():.0f} unidades
     """)
-    st.info("A maioria dos produtos está entre 801–1000 unidades vendidas, mostrando boa concentração na faixa média.")
+    st.info(""" 🧠 As vendas mensais mostraram alta variabilidade com desvio padrão de 445 unidades.""")
+    st.info(""" 🧠 Amplitude de 1477 unidades, variando de 363 (fevereiro) a 1840 (novembro) """)
+    st.info(""" 🧠 Concentração significativa das vendas no último trimestre (setembro a dezembro).""")
+    st.info(""" 🧠 A média (1040) é superior à mediana (886), indicando que picos de fim de ano elevam a média.""")
 
 with col2:
     # --- Histograma de frequência por faixa ---
