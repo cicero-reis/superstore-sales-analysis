@@ -3,7 +3,7 @@ import plotly.express as px
 from utils.formatting import abbreviate_number
 
 def render_margem_de_lucro_por_categoria_markdown():
-    st.info(""" 🧠
+    st.info("""
     A margem de lucro da categoria **Furniture** foi de apenas 1%, enquanto **Technology** e **Office Supplies** 
     operaram com margens saudáveis (19% e 16%, respectivamente). 
     Essa diferença revela uma ineficiência estrutural na categoria **Furniture**.

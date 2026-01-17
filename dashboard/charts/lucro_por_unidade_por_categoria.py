@@ -3,7 +3,7 @@ import plotly.express as px
 from utils.formatting import abbreviate_number
 
 def render_lucro_por_unidade_por_categoria_markdown():
-    st.info(""" 🧠
+    st.info("""
     O lucro por unidade vendida na categoria **Furniture** foi extremamente baixo quando comparado às demais. 
     **Technology** gera alto valor por item vendido, enquanto **Office Supplies** mantém uma rentabilidade intermediária, 
     mesmo com alto volume.

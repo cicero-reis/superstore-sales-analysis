@@ -3,7 +3,7 @@ import plotly.express as px
 from utils.formatting import abbreviate_number
 
 def render_lucro_total_por_categoria_markdown():
-    st.info(""" 🧠
+    st.info("""
     Apesar de apresentar um volume de vendas semelhante às outras categorias, **Furniture** gerou lucro significativamente inferior, 
     representando apenas uma pequena fração do lucro total da empresa. 
     Em contraste, **Technology** e **Office Supplies** concentram a maior parte da rentabilidade.
