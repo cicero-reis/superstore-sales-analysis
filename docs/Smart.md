@@ -8,7 +8,7 @@ Analisar o desempenho de vendas por categoria no ano de **2017**, com foco em **
 
 ## Objetivos SMART
 
-### 🔹 **S — Específico (Specific)**
+### **S — Específico (Specific)**
 
 Avaliar **como cada categoria de produto performou em 2017**, identificando:
 
@@ -21,7 +21,7 @@ Avaliar **como cada categoria de produto performou em 2017**, identificando:
 
 ---
 
-### 🔹 **M — Mensurável (Measurable)**
+### **M — Mensurável (Measurable)**
 
 A análise será baseada em métricas quantitativas objetivas:
 
@@ -48,7 +48,7 @@ Essas métricas permitem medir **nível**, **concentração** e **variabilidade*
 
 ---
 
-### 🔹 **A — Alcançável (Achievable)**
+### **A — Alcançável (Achievable)**
 
 Os objetivos são alcançáveis porque:
 
@@ -59,7 +59,7 @@ Os objetivos são alcançáveis porque:
 
 ---
 
-### 🔹 **R — Relevante (Relevant)**
+### **R — Relevante (Relevant)**
 
 O objetivo é relevante para o negócio porque:
 
@@ -80,7 +80,7 @@ Além disso, cria uma **base sólida** para análises futuras de:
 
 ---
 
-### 🔹 **T — Temporal (Time-bound)**
+### **T — Temporal (Time-bound)**
 
 A análise está delimitada ao período de:
 

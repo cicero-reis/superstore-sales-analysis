@@ -4,7 +4,7 @@
 
 ---
 
-## 🔹 Visão Geral
+## Visão Geral
 
 Este projeto tem como objetivo analisar as **vendas do ano de 2017**, com foco no **desempenho por categoria de produto** e no **comportamento temporal das vendas**, fornecendo insights estratégicos para apoio à tomada de decisão executiva.
 
@@ -23,13 +23,13 @@ A análise busca oferecer aos **stakeholders** uma visão clara sobre:
 
 ---
 
-## 🔹 Pergunta Central de Negócio
+## Pergunta Central de Negócio
 
 > **Como foi o desempenho de vendas por categoria no ano de 2017 e quais categorias concentram maior volume e maior estabilidade operacional?**
 
 ---
 
-## 🔹 Objetivos da Análise
+## Objetivos da Análise
 
 * Identificar quais categorias concentram maior volume de vendas em 2017
 * Avaliar a distribuição mensal das vendas
@@ -38,7 +38,7 @@ A análise busca oferecer aos **stakeholders** uma visão clara sobre:
 
 ---
 
-## 🔹 Escopo da Análise
+## Escopo da Análise
 
 * **Período:** Ano de 2017
 * **Métrica principal:** Quantidade vendida
@@ -50,7 +50,7 @@ A análise busca oferecer aos **stakeholders** uma visão clara sobre:
 
 ---
 
-## 🔹 Abordagem Analítica
+## Abordagem Analítica
 
 A análise segue um processo estruturado inspirado no ciclo analítico:
 
@@ -83,7 +83,7 @@ Essas medidas permitem avaliar **não apenas quanto se vende**, mas **quão prev
 
 ---
 
-## 🔹 Principais Insights (Resumo Executivo)
+## Principais Insights (Resumo Executivo)
 
 * **Office Supplies**
 
@@ -107,7 +107,7 @@ Essas medidas permitem avaliar **não apenas quanto se vende**, mas **quão prev
 
 ---
 
-## 🔹 Uso de IA como Apoio Analítico
+## Uso de IA como Apoio Analítico
 
 A IA generativa foi utilizada exclusivamente como ferramenta de apoio, após a realização das análises estatísticas e consultas SQL.
 
@@ -134,7 +134,7 @@ Todas as análises estatísticas, consultas SQL e interpretações de negócio f
 
 ---
 
-## 🔹 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * **MySQL 8**
 
@@ -152,7 +152,7 @@ Todas as análises estatísticas, consultas SQL e interpretações de negócio f
 
 ---
 
-## 🔹 Estrutura do Repositório
+## Estrutura do Repositório
 
 ```
 Superstore-Sales-Analysis/
@@ -204,7 +204,7 @@ Superstore-Sales-Analysis/
 
 ---
 
-## 🔹 Modelo Dimensional (Star Schema)
+## Modelo Dimensional (Star Schema)
 
 ```
                  dim_customer
@@ -225,7 +225,7 @@ Superstore-Sales-Analysis/
 
 ---
 
-## 🔹 Entregáveis
+## Entregáveis
 
 * Análise de vendas por categoria (2017)
 * Classificação Pareto
@@ -241,7 +241,7 @@ Superstore-Sales-Analysis/
 
 ---
 
-## 🔹 Autor
+## Autor
 
 **Cicero Reis**
 Analista de Dados em desenvolvimento
