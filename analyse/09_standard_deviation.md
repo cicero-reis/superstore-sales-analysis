@@ -1,6 +1,6 @@
-# 📊 Desvio Padrão das Vendas Mensais — 2017
+# Desvio Padrão das Vendas Mensais — 2017
 
-## 🎯 Objetivo da Análise
+## Objetivo da Análise
 
 Medir o **desvio padrão das vendas mensais** no ano de 2017, respondendo à pergunta:
 
@@ -10,7 +10,7 @@ O desvio padrão é uma medida fundamental de **variabilidade** e indica se os d
 
 ---
 
-## 🗂️ Base de Dados
+## Base de Dados
 
 - **Tabela fato:** `fact_sales`
 - **Dimensão de tempo:** `dim_date`
@@ -20,7 +20,7 @@ O desvio padrão é uma medida fundamental de **variabilidade** e indica se os d
 
 ---
 
-## 🔍 Consulta SQL Utilizada
+## Consulta SQL Utilizada
 
 ```sql
 SET @varYear = 2017;
@@ -42,7 +42,7 @@ FROM monthly_quantity;
 
 ---
 
-## 📊 Resultado
+## Resultado
 
 | Métrica           | Valor            |
 | ----------------- | ---------------- |
@@ -50,14 +50,14 @@ FROM monthly_quantity;
 
 ---
 
-## 🧠 Interpretação Estatística
+## Interpretação Estatística
 
 * A **média mensal** em 2017 foi de **1.039,67 unidades**
 * O **desvio padrão** de **445 unidades** indica que, em média:
 
   * As vendas mensais variam **±445 unidades** em torno da média
 
-📌 Isso representa aproximadamente **43% da média**, o que caracteriza **alta dispersão**.
+Isso representa aproximadamente **43% da média**, o que caracteriza **alta dispersão**.
 
 ---
 
@@ -76,31 +76,31 @@ FROM monthly_quantity;
 
 ---
 
-## 📈 Interpretação de Negócio
+## Interpretação de Negócio
 
 * As vendas **não são consistentes** ao longo do ano
 * Existem meses com desempenho **muito acima** e **muito abaixo** do padrão
 * Planejamento baseado apenas na média **é arriscado**
 
-📌 A mediana e os quartis representam melhor o comportamento típico do negócio.
+A mediana e os quartis representam melhor o comportamento típico do negócio.
 
 ---
 
-## ⚠️ Limitações do Desvio Padrão
+## Limitações do Desvio Padrão
 
 ✔ Mede bem a variabilidade
 ✔ Essencial para detectar instabilidade
 
-❌ Sensível a:
+Sensível a:
 
 * Outliers
 * Meses de pico (ex: Q4)
 
-📌 Deve sempre ser analisado junto com mediana e quartis.
+Deve sempre ser analisado junto com mediana e quartis.
 
 ---
 
-## ✅ Conclusão
+## Conclusão
 
 O desvio padrão de **445 unidades** evidencia que as vendas mensais em 2017 apresentaram **alta variabilidade**, reforçando que:
 

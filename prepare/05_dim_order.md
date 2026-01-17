@@ -1,9 +1,9 @@
-# 🧱 **Dimensão Pedido (dim_order)**
+# **Dimensão Pedido (dim_order)**
 
 A **dim_order** descreve *características do pedido* que não mudam por transação.
 Esses atributos ajudam a contextualizar vendas, fretes e prazos.
 
-### 📌 **Atributos que pertencem ao pedido:**
+### **Atributos que pertencem ao pedido:**
 
 | Atributo                            | Descrição                      | Vai para a dimensão? |
 | ----------------------------------- | ------------------------------ | -------------------- |
@@ -17,7 +17,7 @@ Esses atributos ajudam a contextualizar vendas, fretes e prazos.
 
 ---
 
-# 🛠️ **1. Criar a tabela `dim_order`**
+# **1. Criar a tabela `dim_order`**
 
 ```sql
 CREATE TABLE IF NOT EXISTS dim_order (
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS dim_order (
 
 ---
 
-# 🔍 **2. Verificar duplicações de Order ID**
+# **2. Verificar duplicações de Order ID**
 
 Antes de alimentar a dimensão:
 
@@ -50,7 +50,7 @@ HAVING COUNT(*) > 1;
 
 ---
 
-# 🧼 **3. Usar colunas de datas já limpas**
+# **3. Usar colunas de datas já limpas**
 
 Assumindo que você já criou e populou:
 
@@ -59,7 +59,7 @@ Assumindo que você já criou e populou:
 
 ---
 
-# 🚀 **4. Inserir dados na dimensão**
+# **4. Inserir dados na dimensão**
 
 Usar `ROW_NUMBER()` para garantir **um único registro por Order ID**, mesmo que o dataset tenha múltiplas linhas por pedido.
 

@@ -3,7 +3,7 @@ import plotly.express as px
 
 def render_monthly_distribution_page(df_monthly):
 
-    st.title("📊 Distribuição Mensal de Vendas — 2017")
+    st.title("Distribuição Mensal de Vendas — 2017")
 
     # Garantir ordem correta dos meses
     df_monthly = df_monthly.sort_values("month")

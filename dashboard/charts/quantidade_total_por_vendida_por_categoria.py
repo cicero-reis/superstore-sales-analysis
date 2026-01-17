@@ -3,7 +3,7 @@ import plotly.express as px
 from utils.formatting import abbreviate_number
 
 def render_quantidade_total_por_vendida_por_categoria_markdown():
-    st.info(""" 🧠
+    st.info("""
     A categoria **Office Supplies** lidera em quantidade vendida, sendo responsável pela maior parte do volume operacional. 
     **Furniture** e **Technology** apresentam volumes semelhantes, porém muito inferiores ao líder.
     """)

@@ -1,6 +1,6 @@
-# 📄 Statement of Work (SOW)
+# Statement of Work (SOW)
 
-## 📊 Projeto de Análise de Dados – Superstore Sales 2017
+## Projeto de Análise de Dados – Superstore Sales 2017
 
 **Analista de Dados:** Cicero Reis
 **Cliente / Sponsor:** Stakeholders de Negócio – Superstore
@@ -8,7 +8,7 @@
 
 ---
 
-## 🎯 Propósito do Projeto
+## Propósito do Projeto
 
 Este projeto tem como objetivo analisar o desempenho de vendas da Superstore no ano de 2017, com foco na **performance por categoria de produto** e no **comportamento temporal das vendas ao longo do ano**.
 
@@ -23,7 +23,7 @@ Os resultados apoiarão decisões estratégicas relacionadas a:
 
 ---
 
-## 🔍 Escopo / Principais Atividades do Projeto
+## Escopo / Principais Atividades do Projeto
 
 | Atividade                       | Descrição                                                                                                  |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -37,7 +37,7 @@ Os resultados apoiarão decisões estratégicas relacionadas a:
 
 ---
 
-## 🚫 Fora do Escopo do Projeto
+## Fora do Escopo do Projeto
 
 Este projeto **não inclui**:
 
@@ -49,7 +49,7 @@ Este projeto **não inclui**:
 
 ---
 
-## 📦 Entregáveis
+## Entregáveis
 
 | Entregável                             | Descrição                                                      |
 | -------------------------------------- | -------------------------------------------------------------- |
@@ -62,7 +62,7 @@ Este projeto **não inclui**:
 
 ---
 
-## 🗓️ Visão Geral do Cronograma / Principais Marcos
+## Visão Geral do Cronograma / Principais Marcos
 
 | Marco                  | Descrição                                     |
 | ---------------------- | --------------------------------------------- |
@@ -75,7 +75,7 @@ Este projeto **não inclui**:
 
 ---
 
-## 📅 Data Estimada de Conclusão
+## Data Estimada de Conclusão
 
 > **Estimativa de conclusão:**
 > Data estimada considerando disponibilidade total dos dados e execução contínua das atividades analíticas.

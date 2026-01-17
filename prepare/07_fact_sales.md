@@ -1,4 +1,4 @@
-# 📦 **Tabela Fato — `fact_sales`**
+# **Tabela Fato — `fact_sales`**
 
 A **fact_sales** armazena todas as métricas que serão analisadas e conecta as dimensões através de chaves estrangeiras.
 
@@ -12,7 +12,7 @@ Ela responde perguntas como:
 
 ---
 
-# 🧱 **1. Criar a tabela `fact_sales`**
+# **1. Criar a tabela `fact_sales`**
 
 ```sql
 CREATE TABLE fact_sales (
@@ -40,7 +40,7 @@ CREATE TABLE fact_sales (
 
 ---
 
-# 🚀 **2. Popular a tabela fato**
+# **2. Popular a tabela fato**
 
 ```sql
 INSERT INTO fact_sales (
@@ -73,11 +73,11 @@ JOIN dim_customer c
 
 ---
 
-# 🔍 **3. Validações essenciais**
+# **3. Validações essenciais**
 
 ---
 
-## ✅ **3.1. Conferir número total de linhas**
+## **3.1. Conferir número total de linhas**
 
 ```sql
 SELECT
@@ -89,7 +89,7 @@ SELECT
 
 ---
 
-# 🏁 **Resumo das validações**
+# **Resumo das validações**
 
 | Validação                  | Resultado esperado |
 | -------------------------- | ------------------ |

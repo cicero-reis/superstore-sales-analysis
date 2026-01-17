@@ -1,11 +1,11 @@
-# 💰 **Limpeza e Padronização de Valores Numéricos (Sales, Discount, Profit)**
+# **Limpeza e Padronização de Valores Numéricos (Sales, Discount, Profit)**
 
 As colunas originais armazenam valores como **VARCHAR** com vírgula decimal, o que impede cálculos e análises.
 O processo abaixo converte esses valores para **DECIMAL(10,2)**.
 
 ---
 
-## ✅ **1. Criar novas colunas para valores decimais limpos**
+## **1. Criar novas colunas para valores decimais limpos**
 
 ```sql
 ALTER TABLE superstore
@@ -16,7 +16,7 @@ ADD COLUMN profit_clean DECIMAL(10,2);
 
 ---
 
-## ✅ **2. Converter valores `VARCHAR` → `DECIMAL`**
+## **2. Converter valores `VARCHAR` → `DECIMAL`**
 
 Substituir vírgulas por pontos e aplicar a conversão para decimal.
 
@@ -34,7 +34,7 @@ WHERE
 
 ---
 
-## 🧹 **3. (Opcional) Remover as colunas originais**
+## **3. (Opcional) Remover as colunas originais**
 
 Execute apenas após verificar que todas as conversões ocorreram corretamente.
 

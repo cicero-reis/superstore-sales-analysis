@@ -1,11 +1,11 @@
-# 📅 **Limpeza e Padronização das Datas (Order Date / Ship Date)**
+# **Limpeza e Padronização das Datas (Order Date / Ship Date)**
 
 A tabela original armazena as datas como **VARCHAR**, o que impede análise temporal.
 O processo abaixo converte essas datas para o tipo **DATE**, criando novas colunas limpas.
 
 ---
 
-## ✅ **1. Criar novas colunas para armazenar as datas limpas**
+## **1. Criar novas colunas para armazenar as datas limpas**
 
 ```sql
 ALTER TABLE superstore
@@ -15,7 +15,7 @@ ADD COLUMN ship_date_clean DATE;
 
 ---
 
-## ✅ **2. Popular as novas colunas convertendo `VARCHAR` → `DATE`**
+## **2. Popular as novas colunas convertendo `VARCHAR` → `DATE`**
 
 O formato original das datas é **MM/DD/YYYY**, por isso utilizamos `STR_TO_DATE`.
 
@@ -28,7 +28,7 @@ SET
 
 ---
 
-## ✅ **3. Validar se a conversão ocorreu corretamente**
+## **3. Validar se a conversão ocorreu corretamente**
 
 ```sql
 SELECT 
@@ -40,7 +40,7 @@ FROM superstore
 LIMIT 20;
 ```
 
-## 🧹 **4. (Opcional) Remover as colunas antigas**
+## **4. (Opcional) Remover as colunas antigas**
 
 Somente execute quando tiver certeza de que todas as conversões estão corretas.
 

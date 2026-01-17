@@ -1,6 +1,6 @@
-# 📊 Amplitude das Vendas Mensais — 2017
+# Amplitude das Vendas Mensais — 2017
 
-## 🎯 Objetivo da Análise
+## Objetivo da Análise
 
 Medir a **amplitude das vendas mensais** no ano de 2017, respondendo à pergunta:
 
@@ -10,7 +10,7 @@ A amplitude mostra o **intervalo total de variação** dos dados.
 
 ---
 
-## 🗂️ Base de Dados
+## Base de Dados
 
 - **Tabela fato:** `fact_sales`
 - **Dimensão de tempo:** `dim_date`
@@ -20,7 +20,7 @@ A amplitude mostra o **intervalo total de variação** dos dados.
 
 ---
 
-## 🔍 Consulta SQL Utilizada
+## Consulta SQL Utilizada
 
 ```sql
 SET @varYear = 2017;
@@ -42,7 +42,7 @@ FROM monthly_quantity;
 
 ---
 
-## 📊 Resultado
+## Resultado
 
 | Métrica       | Valor              |
 | ------------- | ------------------ |
@@ -50,13 +50,13 @@ FROM monthly_quantity;
 
 ---
 
-## 🧠 Interpretação de Negócio
+## Interpretação de Negócio
 
 * O pior mês de 2017 teve **363 unidades vendidas**
 * O melhor mês de 2017 teve **1.840 unidades vendidas**
 * A diferença entre esses extremos foi de **1.477 unidades**
 
-📌 Isso indica que o desempenho mensal **variou drasticamente** ao longo do ano.
+Isso indica que o desempenho mensal **variou drasticamente** ao longo do ano.
 
 ---
 
@@ -77,22 +77,22 @@ FROM monthly_quantity;
 
 ---
 
-## ⚠️ Limitações da Amplitude
+## Limitações da Amplitude
 
 ✔ Fácil de interpretar
 ✔ Mostra rapidamente o intervalo total
 
-❌ Não informa:
+Não informa:
 
 * Frequência dos extremos
 * Distribuição interna
 * Comportamento típico
 
-📌 Por isso, a amplitude **não deve ser usada sozinha** para análise de desempenho.
+Por isso, a amplitude **não deve ser usada sozinha** para análise de desempenho.
 
 ---
 
-## ✅ Conclusão
+## Conclusão
 
 A amplitude de **1.477 unidades** confirma que as vendas mensais em 2017 apresentaram **alta volatilidade**, reforçando a necessidade de:
 

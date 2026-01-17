@@ -1,6 +1,6 @@
-# 📊 Mínimo e Máximo das Vendas Mensais — 2017
+# Mínimo e Máximo das Vendas Mensais — 2017
 
-## 🎯 Objetivo da Análise
+## Objetivo da Análise
 
 Identificar os **extremos de vendas mensais** no ano de 2017 para responder:
 
@@ -12,7 +12,7 @@ Essa análise ajuda a entender **limites reais de desempenho**, não médias.
 
 ---
 
-## 🗂️ Base de Dados
+## Base de Dados
 
 - **Tabela fato:** `fact_sales`
 - **Dimensão de tempo:** `dim_date`
@@ -22,7 +22,7 @@ Essa análise ajuda a entender **limites reais de desempenho**, não médias.
 
 ---
 
-## 🔍 Consulta SQL Utilizada
+## Consulta SQL Utilizada
 
 ```sql
 SET @varYear = 2017;
@@ -45,7 +45,7 @@ FROM monthly_quantity;
 
 ---
 
-## 📊 Resultado
+## Resultado
 
 | Métrica           | Quantidade |
 | ----------------- | ---------- |
@@ -54,9 +54,9 @@ FROM monthly_quantity;
 
 ---
 
-## 🧠 Interpretação de Negócio
+## Interpretação de Negócio
 
-### 🔻 Mínimo (363 unidades)
+### Mínimo (363 unidades)
 
 * Representa o **pior desempenho mensal** em 2017
 * Está localizado no **1º quartil (Q1)**
@@ -68,7 +68,7 @@ FROM monthly_quantity;
 
 ---
 
-### 🔺 Máximo (1840 unidades)
+### Máximo (1840 unidades)
 
 * Representa o **melhor desempenho mensal** do ano
 * Está localizado no **4º quartil (Q4)**
@@ -81,7 +81,7 @@ FROM monthly_quantity;
 
 ---
 
-## 🔗 Conexão com Quartis e Medidas Centrais
+## Conexão com Quartis e Medidas Centrais
 
 | Medida  | Valor    | Contexto                  |
 | ------- | -------- | ------------------------- |
@@ -91,11 +91,11 @@ FROM monthly_quantity;
 | Média   | 1.039,67 | Elevada pelo Q4           |
 | Máximo  | 1.840    | Q4 — outlier positivo     |
 
-📌 A grande distância entre mínimo e máximo **confirma alta variabilidade** ao longo do ano.
+A grande distância entre mínimo e máximo **confirma alta variabilidade** ao longo do ano.
 
 ---
 
-## ⚠️ Conclusão Estatística
+## Conclusão Estatística
 
 ✔ Mínimo e máximo **não representam o comportamento típico**
 ✔ Devem ser usados para:
@@ -104,7 +104,7 @@ FROM monthly_quantity;
 * Avaliar **cenários extremos**
 * Apoiar análise de risco
 
-❌ Não devem ser usados isoladamente para:
+Não devem ser usados isoladamente para:
 
 * Previsão
 * Metas padrão

@@ -1,6 +1,6 @@
-# 📊 Mediana das Vendas Mensais — 2017
+# Mediana das Vendas Mensais — 2017
 
-## 🎯 Objetivo da Análise
+## Objetivo da Análise
 
 Calcular a **mediana das vendas mensais** no ano de 2017 para identificar o **valor central da distribuição**, reduzindo a influência de meses com vendas extremamente altas ou baixas.
 
@@ -10,7 +10,7 @@ Esta métrica responde à pergunta:
 
 ---
 
-## 🗂️ Base de Dados
+## Base de Dados
 
 - **Tabela fato:** `fact_sales`
 - **Tabela dimensão:** `dim_date`
@@ -20,7 +20,7 @@ Esta métrica responde à pergunta:
 
 ---
 
-## 🧮 Cálculo da Mediana Mensal
+## Cálculo da Mediana Mensal
 
 Como o MySQL não possui uma função nativa de mediana, foi utilizada uma abordagem baseada em:
 
@@ -28,7 +28,7 @@ Como o MySQL não possui uma função nativa de mediana, foi utilizada uma abord
 - Numeração sequencial das linhas
 - Seleção do(s) valor(es) central(is)
 
-### 🔍 Consulta SQL
+### Consulta SQL
 
 ```sql
 SET @varYear = 2017;
@@ -62,7 +62,7 @@ WHERE rn IN (
 
 ---
 
-## 📊 Resultado
+## Resultado
 
 | Mediana mensal de vendas |
 | ------------------------ |
@@ -70,7 +70,7 @@ WHERE rn IN (
 
 ---
 
-## 🧠 Interpretação do Resultado
+## Interpretação do Resultado
 
 A mediana indica que:
 
@@ -81,16 +81,16 @@ Diferente da média, a mediana **não é influenciada por meses com picos elevad
 
 ---
 
-## 📌 Comparação Conceitual (sem cálculo)
+## Comparação Conceitual (sem cálculo)
 
 * **Média:** ~1.040 unidades
 * **Mediana:** 886 unidades
 
-📉 A média ser maior que a mediana indica uma **distribuição assimétrica à direita**, puxada por meses com vendas muito altas no fim do ano.
+A média ser maior que a mediana indica uma **distribuição assimétrica à direita**, puxada por meses com vendas muito altas no fim do ano.
 
 ---
 
-## ⚠️ Observação Importante
+## Observação Importante
 
 A mediana é especialmente útil quando:
 
@@ -102,7 +102,7 @@ Esta análise complementa — mas não substitui — a média.
 
 ---
 
-## 📌 Conclusão
+## Conclusão
 
 ✔ A mediana mensal de vendas em 2017 foi **886 unidades**
 ✔ Representa melhor o comportamento típico mensal

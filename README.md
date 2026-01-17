@@ -1,4 +1,4 @@
-# 📊 Superstore Sales Analysis — Vendas por Categoria (2017)
+# Superstore Sales Analysis — Vendas por Categoria (2017)
 
 **Análise de Dados com foco em Performance por Categoria**
 
@@ -45,7 +45,7 @@ A análise busca oferecer aos **stakeholders** uma visão clara sobre:
 * **Nível de análise:** Categoria de produto
 * **Tipo de análise:** Estatística descritiva e análise exploratória
 
-> ⚠️ **Limitação do projeto:**
+> **Limitação do projeto:**
 > Este estudo **não avalia receita ou lucro**, focando exclusivamente no comportamento do **volume de vendas**. Análises financeiras ficam como etapa futura.
 
 ---
@@ -58,20 +58,20 @@ A análise segue um processo estruturado inspirado no ciclo analítico:
 
 Foram aplicados conceitos práticos de **estatística descritiva diretamente em SQL**, garantindo rastreabilidade e clareza metodológica.
 
-### 📌 Análise por Categoria
+### Análise por Categoria
 
 * Frequência absoluta e relativa
 * Frequência acumulada
 * Classificação Pareto (A, B, C)
 * Comparação entre categorias
 
-### 📌 Medidas de Tendência Central
+### Medidas de Tendência Central
 
 * Média mensal
 * Mediana mensal
 * Moda (faixa de vendas mais frequente)
 
-### 📌 Medidas de Dispersão e Variabilidade
+### Medidas de Dispersão e Variabilidade
 
 * Quartis (Q1, Q2, Q3, Q4)
 * Mínimo e Máximo
@@ -103,7 +103,7 @@ Essas medidas permitem avaliar **não apenas quanto se vende**, mas **quão prev
   * Contribuição concentrada em poucos períodos
   * Potencial para análises futuras por valor (receita e margem)
 
-> 🔎 A análise demonstra que **alto volume não implica necessariamente estabilidade**, reforçando a importância de olhar além da média.
+> A análise demonstra que **alto volume não implica necessariamente estabilidade**, reforçando a importância de olhar além da média.
 
 ---
 
@@ -111,13 +111,13 @@ Essas medidas permitem avaliar **não apenas quanto se vende**, mas **quão prev
 
 A IA generativa foi utilizada exclusivamente como ferramenta de apoio, após a realização das análises estatísticas e consultas SQL.
 
-### ✔️ Como a IA foi utilizada
+### Como a IA foi utilizada
 
 * Apoiar a síntese de insights
 * Melhorar a clareza da comunicação executiva
 * Servir como revisão crítica do raciocínio analítico
 
-### ❌ O que NÃO foi feito pela IA
+### O que NÃO foi feito pela IA
 
 * Nenhuma métrica estatística foi calculada pela IA
 * Nenhuma consulta SQL foi gerada automaticamente
@@ -130,7 +130,7 @@ Todas as análises estatísticas, consultas SQL e interpretações de negócio f
 * **LangChain**
 * **LLM Gemini**
 
-> 🔎 A abordagem reflete um uso responsável e profissional de IA, alinhado às práticas atuais do mercado.
+> A abordagem reflete um uso responsável e profissional de IA, alinhado às práticas atuais do mercado.
 
 ---
 
@@ -235,7 +235,7 @@ Superstore-Sales-Analysis/
 
 ---
 
-## 🚀 Demonstração
+## Demonstração
 
 ![Demo do projeto](assets/demo.gif)
 

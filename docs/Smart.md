@@ -1,12 +1,12 @@
-# 🟩 SMART — Objetivos da Análise
+# SMART — Objetivos da Análise
 
-## 🎯 Objetivo Geral
+## Objetivo Geral
 
 Analisar o desempenho de vendas por categoria no ano de **2017**, com foco em **volume**, **participação relativa** e **estabilidade ao longo do tempo**, para apoiar decisões estratégicas de priorização comercial e operacional.
 
 ---
 
-## 📌 Objetivos SMART
+## Objetivos SMART
 
 ### 🔹 **S — Específico (Specific)**
 
@@ -25,7 +25,7 @@ Avaliar **como cada categoria de produto performou em 2017**, identificando:
 
 A análise será baseada em métricas quantitativas objetivas:
 
-#### 📊 Métricas de Volume
+#### Métricas de Volume
 
 * Quantidade total vendida
 * Frequência absoluta
@@ -33,7 +33,7 @@ A análise será baseada em métricas quantitativas objetivas:
 * Frequência acumulada
 * Classificação de Pareto (A, B, C)
 
-#### 📈 Métricas Estatísticas
+#### Métricas Estatísticas
 
 * Média mensal
 * Mediana mensal
@@ -93,7 +93,7 @@ E será concluída:
 
 ---
 
-## ✅ Critérios de Sucesso
+## Critérios de Sucesso
 
 A análise será considerada bem-sucedida se:
 
@@ -107,7 +107,7 @@ A análise será considerada bem-sucedida se:
 
 ---
 
-## 🧠 Alinhamento com o Negócio
+## Alinhamento com o Negócio
 
 Este SMART garante que:
 

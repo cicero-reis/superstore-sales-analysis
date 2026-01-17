@@ -1,6 +1,6 @@
-# 📊 Média das Vendas Mensais — 2017
+# Média das Vendas Mensais — 2017
 
-## 🎯 Objetivo da Análise
+## Objetivo da Análise
 
 Calcular a **média de vendas mensais** no ano de 2017 para entender o **nível médio de volume vendido por mês**.
 
@@ -10,7 +10,7 @@ Esta métrica responde à pergunta:
 
 ---
 
-## 🗂️ Base de Dados
+## Base de Dados
 
 - **Tabela fato:** `fact_sales`
 - **Tabela dimensão:** `dim_date`
@@ -19,9 +19,9 @@ Esta métrica responde à pergunta:
 
 ---
 
-## 🧮 Cálculo da Média Mensal
+## Cálculo da Média Mensal
 
-### 🔍 Consulta SQL
+### Consulta SQL
 
 ```sql
 SET @varYear = 2017;
@@ -44,7 +44,7 @@ FROM monthly_quantity;
 
 ---
 
-## 📊 Resultado
+## Resultado
 
 | Média mensal de vendas |
 | ---------------------- |
@@ -52,7 +52,7 @@ FROM monthly_quantity;
 
 ---
 
-## 🧠 Interpretação do Resultado
+## Interpretação do Resultado
 
 Em 2017, a empresa vendeu, em média, **aproximadamente 1.040 unidades por mês**.
 
@@ -64,16 +64,16 @@ Este valor representa um **indicador geral de volume**, útil para:
 
 ---
 
-## ⚠️ Observação Importante
+## Observação Importante
 
 A média é uma medida **sensível a valores extremos**.
 Ela **não indica** se as vendas mensais foram estáveis ou concentradas em poucos meses com volumes muito altos.
 
-➡️ Análises complementares (mediana, moda e dispersão) são necessárias para entender a **variabilidade** do comportamento mensal, mas **não fazem parte deste arquivo**.
+Análises complementares (mediana, moda e dispersão) são necessárias para entender a **variabilidade** do comportamento mensal, mas **não fazem parte deste arquivo**.
 
 ---
 
-## 📌 Conclusão
+## Conclusão
 
 ✔ A média mensal de vendas em 2017 foi **1.039,67 unidades**
 ✔ O valor fornece uma **visão geral**, mas não descreve a distribuição completa

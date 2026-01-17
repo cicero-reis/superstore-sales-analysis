@@ -1,6 +1,6 @@
-# 📊 Quartis das Vendas Mensais — 2017
+# Quartis das Vendas Mensais — 2017
 
-## 🎯 Objetivo da Análise
+## Objetivo da Análise
 
 Dividir as vendas mensais de 2017 em **quatro partes iguais (quartis)** para entender:
 
@@ -14,7 +14,7 @@ Esta análise responde à pergunta:
 
 ---
 
-## 🗂️ Base de Dados
+## Base de Dados
 
 - **Tabela fato:** `fact_sales`
 - **Tabela dimensão:** `dim_date`
@@ -24,7 +24,7 @@ Esta análise responde à pergunta:
 
 ---
 
-## 🧮 Conceito de Quartis
+## Conceito de Quartis
 
 | Quartil | Interpretação |
 |------|--------------|
@@ -35,7 +35,7 @@ Esta análise responde à pergunta:
 
 ---
 
-## 🔍 Consulta SQL Utilizada
+## Consulta SQL Utilizada
 
 ```sql
 SET @varYear = 2017;
@@ -68,7 +68,7 @@ ORDER BY quartil;
 
 ---
 
-## 📊 Resultado dos Quartis
+## Resultado dos Quartis
 
 | Quartil | Mínimo | Máximo |
 | ------- | ------ | ------ |
@@ -79,9 +79,9 @@ ORDER BY quartil;
 
 ---
 
-## 🧠 Interpretação de Negócio
+## Interpretação de Negócio
 
-### 🔹 Q1 — Meses de Baixa Performance
+### Q1 — Meses de Baixa Performance
 
 * Intervalo: **363 a 733**
 * Representa os **25% piores meses**
@@ -93,7 +93,7 @@ ORDER BY quartil;
 
 ---
 
-### 🔹 Q2 — Comportamento Normal (Mediana)
+### Q2 — Comportamento Normal (Mediana)
 
 * Intervalo: **840 a 885**
 * Contém a **mediana (886)** ou muito próxima
@@ -102,7 +102,7 @@ ORDER BY quartil;
 
 ---
 
-### 🔹 Q3 — Meses Acima do Padrão
+### Q3 — Meses Acima do Padrão
 
 * Intervalo: **887 a 1133**
 * Meses com desempenho **acima da normalidade**
@@ -114,7 +114,7 @@ ORDER BY quartil;
 
 ---
 
-### 🔹 Q4 — Meses Excepcionais
+### Q4 — Meses Excepcionais
 
 * Intervalo: **1660 a 1840**
 * Forte distanciamento dos quartis anteriores
@@ -126,7 +126,7 @@ ORDER BY quartil;
 
 ---
 
-## 📌 Relação com Outras Medidas Estatísticas
+## Relação com Outras Medidas Estatísticas
 
 | Medida       | Valor    | Onde se Encaixa      |
 | ------------ | -------- | -------------------- |
@@ -134,11 +134,11 @@ ORDER BY quartil;
 | Moda (faixa) | 801–1000 | Entre Q2 e Q3        |
 | Média        | 1.039,67 | Influenciada pelo Q4 |
 
-📍 O **Q4 distorce a média**, confirmando que a mediana é mais representativa do comportamento normal.
+O **Q4 distorce a média**, confirmando que a mediana é mais representativa do comportamento normal.
 
 ---
 
-## ⚠️ Conclusão Estatística
+## Conclusão Estatística
 
 ✔ A maioria dos meses está concentrada entre **Q2 e Q3**
 ✔ **Q4 representa meses excepcionais**, não recorrentes

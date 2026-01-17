@@ -5,7 +5,7 @@ O versionamento segue um formato simples, didático e incremental.
 
 ---
 
-## 🟢 v0.1.0 — Importação e Preparação Inicial dos Dados
+## v0.1.0 — Importação e Preparação Inicial dos Dados
 
 **Fase:** Prepare
 
@@ -20,7 +20,7 @@ O versionamento segue um formato simples, didático e incremental.
 
 ---
 
-## 🟢 v0.2.0 — Limpeza e Padronização de Tipos de Dados
+## v0.2.0 — Limpeza e Padronização de Tipos de Dados
 
 **Fase:** Prepare
 
@@ -45,7 +45,7 @@ O versionamento segue um formato simples, didático e incremental.
 
 ---
 
-## 🟢 v0.3.0 — Modelagem Dimensional (Star Schema)
+## v0.3.0 — Modelagem Dimensional (Star Schema)
 
 **Fase:** Prepare
 
@@ -66,7 +66,7 @@ O versionamento segue um formato simples, didático e incremental.
 
 ---
 
-## 🟢 v0.4.0 — Criação da Tabela Fato
+## v0.4.0 — Criação da Tabela Fato
 
 **Fase:** Prepare
 
@@ -92,7 +92,7 @@ O versionamento segue um formato simples, didático e incremental.
 
 ---
 
-## 🟢 v0.5.0 — Consolidação da Etapa Prepare
+## v0.5.0 — Consolidação da Etapa Prepare
 
 **Fase:** Prepare (Concluída)
 
@@ -104,7 +104,7 @@ O versionamento segue um formato simples, didático e incremental.
 
 ---
 
-## 🟢 v0.6.0 — Etapa Process: Limpeza, Consistência e Estruturação
+## v0.6.0 — Etapa Process: Limpeza, Consistência e Estruturação
 
 **Fase:** Process (Concluída)
 

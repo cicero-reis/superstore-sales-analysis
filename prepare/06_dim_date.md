@@ -1,11 +1,11 @@
-# 📅 **Dimensão de Datas (dim_date)**
+# **Dimensão de Datas (dim_date)**
 
 A **dim_date** é fundamental em qualquer modelo estrela.
 Ela permite análises por **ano, trimestre, mês, semana, dia**, além de facilitar cálculos como comparações históricas.
 
 ---
 
-# 🧭 **1. Descobrir o intervalo completo de datas**
+# **1. Descobrir o intervalo completo de datas**
 
 Antes de gerar a dimensão, identifique o período que seu dataset cobre:
 
@@ -18,7 +18,7 @@ SELECT
 FROM superstore;
 ```
 
-📌 **Resultado típico:**
+**Resultado típico:**
 
 | min_order  | max_order  | min_ship   | max_ship   |
 | ---------- | ---------- | ---------- | ---------- |
@@ -26,7 +26,7 @@ FROM superstore;
 
 ---
 
-# 🗂️ **2. Criar a tabela `dim_date`**
+# **2. Criar a tabela `dim_date`**
 
 ```sql
 CREATE TABLE IF NOT EXISTS dim_date (
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS dim_date (
 );
 ```
 
-### 🔑 Por que `date_key` é inteiro?
+### Por que `date_key` é inteiro?
 
 ✔ Facilita joins
 ✔ Ocupa menos espaço
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS dim_date (
 
 ---
 
-# 🔄 **3. Gerar o calendário completo**
+# **3. Gerar o calendário completo**
 
 Usar uma CTE recursiva para criar todas as datas do intervalo:
 
@@ -81,11 +81,11 @@ SELECT
 FROM date_range;
 ```
 
-📌 **Isso gera 1464 linhas — uma por dia do intervalo.**
+**Isso gera 1464 linhas — uma por dia do intervalo.**
 
 ---
 
-# 🛠️ **4. Erro de profundidade recursiva?**
+# **4. Erro de profundidade recursiva?**
 
 Use:
 

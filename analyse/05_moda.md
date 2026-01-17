@@ -1,11 +1,11 @@
-# 📊 Moda das Vendas Mensais — 2017
+# Moda das Vendas Mensais — 2017
 
-## 🎯 Objetivo da Análise
+## Objetivo da Análise
 
 Identificar a **moda das vendas mensais** no ano de 2017, ou seja, o **intervalo de valores que ocorre com maior frequência**.
 
 Como os valores mensais de vendas são **contínuos** (cada mês tende a ter um valor único), a moda direta não é estatisticamente adequada.  
-Por isso, utilizamos **faixas de valores (buckets)** para identificar padrões recorrentes.
+Por isso, utilizo **faixas de valores (buckets)** para identificar padrões recorrentes.
 
 Esta análise responde à pergunta:
 
@@ -13,7 +13,7 @@ Esta análise responde à pergunta:
 
 ---
 
-## 🗂️ Base de Dados
+## Base de Dados
 
 - **Tabela fato:** `fact_sales`
 - **Tabela dimensão:** `dim_date`
@@ -23,17 +23,17 @@ Esta análise responde à pergunta:
 
 ---
 
-## ⚠️ Observação Estatística Importante
+## Observação Estatística Importante
 
 A **moda tradicional** só faz sentido quando:
 - Existem valores repetidos
 - Ou os dados são categóricos
 
-Como cada mês possui um valor único de vendas, aplicamos a **moda por classes (faixas)**, técnica comum em análises exploratórias e relatórios executivos.
+Como cada mês possui um valor único de vendas, apliquei a **moda por classes (faixas)**, técnica comum em análises exploratórias e relatórios executivos.
 
 ---
 
-## 🧮 Definição das Faixas de Venda
+## Definição das Faixas de Venda
 
 | Faixa | Critério |
 |-----|---------|
@@ -44,7 +44,7 @@ Como cada mês possui um valor único de vendas, aplicamos a **moda por classes 
 
 ---
 
-## 🔍 Consulta SQL
+## Consulta SQL
 
 ```sql
 SET @varYear = 2017;
@@ -79,7 +79,7 @@ ORDER BY frequencia DESC;
 
 ---
 
-## 📊 Resultado
+## Resultado
 
 | Faixa de Venda | Frequência  |
 | -------------- | ----------- |
@@ -90,7 +90,7 @@ ORDER BY frequencia DESC;
 
 ---
 
-## 🧠 Interpretação do Resultado
+## Interpretação do Resultado
 
 * A **moda das vendas mensais** em 2017 está na faixa **801–1000 unidades**
 * **5 de 12 meses** ficaram concentrados nesse intervalo
@@ -98,7 +98,7 @@ ORDER BY frequencia DESC;
 
 ---
 
-## 📌 Conexão com Média e Mediana
+## Conexão com Média e Mediana
 
 | Medida           | Valor        | Observação                                    |
 | ---------------- | ------------ | --------------------------------------------- |
@@ -106,11 +106,11 @@ ORDER BY frequencia DESC;
 | Mediana          | 886,00       | Valor central mais representativo             |
 | **Moda (faixa)** | **801–1000** | Faixa mais frequente                          |
 
-📍 A mediana (886) **está contida na faixa modal**, reforçando que ela descreve melhor o padrão típico mensal do que a média.
+A mediana (886) **está contida na faixa modal**, reforçando que ela descreve melhor o padrão típico mensal do que a média.
 
 ---
 
-## ⚠️ Limitação da Moda por Faixas
+## Limitação da Moda por Faixas
 
 * O resultado depende da **definição das faixas**
 * Faixas diferentes podem alterar a moda
@@ -118,7 +118,7 @@ ORDER BY frequencia DESC;
 
 ---
 
-## 📌 Conclusão
+## Conclusão
 
 ✔ A moda por faixa indica que a maioria dos meses de 2017 teve vendas entre **801 e 1000 unidades**
 ✔ Confirma que a **média está inflada por meses excepcionais**

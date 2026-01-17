@@ -1,6 +1,6 @@
-# 📅 Distribuição Mensal de Vendas — 2017
+# Distribuição Mensal de Vendas — 2017
 
-## 🎯 Objetivo da Análise
+## Objetivo da Análise
 
 Analisar como o **volume de vendas (quantidade)** se distribuiu ao longo dos meses de **2017**, identificando:
 
@@ -12,7 +12,7 @@ Esta análise ajuda stakeholders a entender **quando a operação é mais exigid
 
 ---
 
-## 🗂️ Base de Dados
+## Base de Dados
 
 - **Tabela fato:** `fact_sales`
 - **Tabela de data:** `dim_date`
@@ -21,7 +21,7 @@ Esta análise ajuda stakeholders a entender **quando a operação é mais exigid
 
 ---
 
-## 🧠 Consulta SQL Utilizada
+## Consulta SQL Utilizada
 
 ```sql
 SET @varYear = 2017;
@@ -63,27 +63,27 @@ ORDER BY month;
 
 ---
 
-## 🔍 Análise dos Resultados
+## Análise dos Resultados
 
-### 📉 Meses de Menor Volume
+### Meses de Menor Volume
 
 * **Fevereiro (363)** foi o mês com **menor quantidade vendida**
 * Janeiro e abril também apresentam volumes relativamente baixos
 
-➡️ Indica um início de ano mais fraco em termos de vendas.
+Indica um início de ano mais fraco em termos de vendas.
 
 ---
 
-### 📈 Meses de Maior Volume
+### Meses de Maior Volume
 
 * **Novembro (1.840)** foi o pico de vendas do ano
 * Dezembro (1.723) e setembro (1.660) também se destacam
 
-➡️ Forte concentração de vendas no **último trimestre**, sugerindo sazonalidade.
+Forte concentração de vendas no **último trimestre**, sugerindo sazonalidade.
 
 ---
 
-### 🔄 Comportamento ao Longo do Ano
+### Comportamento ao Longo do Ano
 
 * Crescimento gradual a partir de março
 * Estabilidade moderada entre março e agosto
@@ -92,7 +92,7 @@ ORDER BY month;
 
 ---
 
-## 💡 Insight de Negócio
+## Insight de Negócio
 
 ### **Fato**
 

@@ -1,11 +1,11 @@
-# 🧱 **Dimensão Produto (dim_product)**
+# **Dimensão Produto (dim_product)**
 
 ### ✔ O que ela representa?
 
 A **dim_product** guarda informações **descritivas e estáveis** sobre cada produto.
 Ela não armazena fatos (quantidades, valores), apenas **atributos do produto**.
 
-### 📌 **Atributos que pertencem ao produto:**
+### **Atributos que pertencem ao produto:**
 
 | Atributo         | Descrição           | Vai para a dimensão? |
 | ---------------- | ------------------- | -------------------- |
@@ -16,7 +16,7 @@ Ela não armazena fatos (quantidades, valores), apenas **atributos do produto**.
 
 ---
 
-# 🛠️ **1. Criar tabela `dim_product`**
+# **1. Criar tabela `dim_product`**
 
 ```sql
 CREATE TABLE IF NOT EXISTS dim_product (
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS dim_product (
 
 ---
 
-# 🧹 **2. Popular a Dimensão Produto**
+# **2. Popular a Dimensão Produto**
 
 ## ✔ Opção 1 — Método simples: **DISTINCT**
 
@@ -50,7 +50,7 @@ FROM superstore;
 
 ---
 
-# ⚠️ **Opção 2 — Método robusto: tratar inconsistências**
+# **Opção 2 — Método robusto: tratar inconsistências**
 
 Se houver produtos com **nomes diferentes para o mesmo ID**, usamos `ROW_NUMBER()`.
 
@@ -76,16 +76,16 @@ WHERE t.rn = 1;
 
 ---
 
-# 🔍 **3. Verificar quantos produtos únicos existem**
+# **3. Verificar quantos produtos únicos existem**
 
-### 🧮 No dataset original
+### No dataset original
 
 ```sql
 SELECT COUNT(DISTINCT `Product ID`) 
 FROM superstore;
 ```
 
-### 🧱 Na dimensão populada
+### Na dimensão populada
 
 ```sql
 SELECT COUNT(*) 

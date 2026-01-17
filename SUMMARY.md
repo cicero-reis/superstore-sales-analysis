@@ -1,4 +1,4 @@
-# 📌 Executive Summary
+# Executive Summary
 
 **Análise de Vendas por Categoria — Superstore | Ano 2017**
 
@@ -8,9 +8,9 @@ Esta análise avaliou o desempenho de vendas da Superstore em 2017, com foco em 
 
 ---
 
-## 🔑 Principais Descobertas
+## Principais Descobertas
 
-### 1️⃣ Crescimento de Vendas Não Significa Crescimento de Lucro
+### Crescimento de Vendas Não Significa Crescimento de Lucro
 
 * A categoria **Furniture** apresentou **alto volume de vendas ($215 mil)**, porém **rentabilidade crítica**, com:
 
@@ -18,36 +18,36 @@ Esta análise avaliou o desempenho de vendas da Superstore em 2017, com foco em 
   * Lucro total de **$3.018**
   * Lucro por unidade de **$1,24**
 
-➡️ Em contraste:
+Em contraste:
 
 * **Technology**: margem de **19%**
 * **Office Supplies**: margem de **16%**
 
-📌 **Conclusão:** Furniture consome recursos relevantes, mas gera retorno financeiro mínimo, reduzindo a lucratividade global do negócio.
+**Conclusão:** Furniture consome recursos relevantes, mas gera retorno financeiro mínimo, reduzindo a lucratividade global do negócio.
 
 ---
 
-### 2️⃣ Forte Dependência Operacional de Office Supplies
+### Forte Dependência Operacional de Office Supplies
 
 * **Office Supplies** respondeu por **62% do volume total vendido** em 2017 (Classe A no Pareto).
 * Furniture e Technology juntas somam apenas 39% do volume.
 
-📌 **Conclusão:** O negócio possui **alta dependência operacional** de uma única categoria em termos de volume, o que aumenta o risco operacional e exige eficiência máxima nessa área.
+**Conclusão:** O negócio possui **alta dependência operacional** de uma única categoria em termos de volume, o que aumenta o risco operacional e exige eficiência máxima nessa área.
 
 ---
 
-### 3️⃣ Vendas Extremamente Concentradas no Final do Ano
+### Vendas Extremamente Concentradas no Final do Ano
 
 * **60% das vendas anuais ocorreram entre setembro e dezembro**
 * Média mensal: **1.039 unidades**
 * Mediana: **886 unidades**
 * Desvio padrão: **445 unidades** (alta variabilidade)
 
-📌 **Conclusão:** Existe **sazonalidade acentuada**, com picos no final do ano e meses iniciais com desempenho significativamente inferior.
+**Conclusão:** Existe **sazonalidade acentuada**, com picos no final do ano e meses iniciais com desempenho significativamente inferior.
 
 ---
 
-## 📉 Implicações para o Negócio
+## Implicações para o Negócio
 
 * **Financeiras**
 
@@ -66,7 +66,7 @@ Esta análise avaliou o desempenho de vendas da Superstore em 2017, com foco em 
 
 ---
 
-## 🎯 Recomendações Estratégicas
+## Recomendações Estratégicas
 
 ### Curto Prazo
 
@@ -83,7 +83,7 @@ Esta análise avaliou o desempenho de vendas da Superstore em 2017, com foco em 
 
 ---
 
-## ✅ Conclusão Final
+## Conclusão Final
 
 A Superstore apresenta **bom desempenho em volume**, porém enfrenta **ineficiências claras na conversão de vendas em lucro**, especialmente na categoria Furniture e na gestão da sazonalidade. A aplicação de ajustes estratégicos focados em **rentabilidade, mix de produtos e planejamento temporal** pode gerar ganhos financeiros significativos sem necessidade imediata de aumento de volume.
 

@@ -1,6 +1,6 @@
-# 🟦 Ask — Definição do Problema de Negócio
+# Ask — Definição do Problema de Negócio
 
-## 📌 Contexto
+## Contexto
 
 A empresa Superstore possui um portfólio diversificado de produtos distribuídos em três grandes categorias:
 
@@ -14,7 +14,7 @@ Antes de decisões estratégicas envolvendo investimento, estoque ou priorizaç�
 
 ---
 
-## 🎯 Problema de Negócio
+## Problema de Negócio
 
 > **Não está claro quais categorias de produtos concentraram maior volume de vendas em 2017, nem quão estáveis ou voláteis essas vendas foram ao longo do ano.**
 
@@ -26,13 +26,13 @@ Sem essa compreensão:
 
 ---
 
-## ❓ Pergunta Principal (Ask)
+## Pergunta Principal (Ask)
 
 > **Como foi o desempenho de vendas por categoria no ano de 2017 e quais categorias concentraram maior volume e estabilidade ao longo do período?**
 
 ---
 
-## ❓ Perguntas Secundárias
+## Perguntas Secundárias
 
 1. **Qual categoria apresentou o maior volume de vendas em 2017?**
 2. **Qual a participação percentual de cada categoria no total de vendas?**
@@ -40,7 +40,7 @@ Sem essa compreensão:
 4. **Existem meses atípicos (picos ou quedas extremas) em alguma categoria?**
 5. **Quais categorias concentram a maior parte do volume (Princípio de Pareto)?**
 
-## ✅ Resultado Esperado
+## Resultado Esperado
 
 Ao final da análise, espera-se:
 
@@ -50,6 +50,6 @@ Ao final da análise, espera-se:
 
 ---
 
-### 📌 Observação Final
+### Observação Final
 
 Este documento orienta toda a análise e garante que **as consultas SQL, métricas estatísticas e insights gerados estejam alinhados a um objetivo de negócio claro**.

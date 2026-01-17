@@ -55,7 +55,7 @@ WHERE q.`year` = @varYear;
 2017|Furniture      |          2437|  215387.28|     3018.44|           1.24|         0.01|
 
 
-## 📌 Interpretação
+## Interpretação
 
 - A categoria **Technology** apresenta o maior valor agregado ao negócio, combinando alto faturamento com excelente margem (19%) e lucro por unidade elevado.
 - **Office Supplies** lidera em volume, mas com rentabilidade inferior, indicando possível foco em eficiência operacional.

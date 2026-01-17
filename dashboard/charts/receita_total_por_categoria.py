@@ -3,7 +3,7 @@ import plotly.express as px
 from utils.formatting import abbreviate_number
 
 def render_receita_total_por_categoria_markdown():
-    st.info(""" 🧠
+    st.info("""
     Em **2017**, as três categorias apresentaram volumes de receita relativamente próximos, com destaque para **Technology**, 
     seguida por **Office Supplies** e **Furniture**. 
     Isso indica que Furniture não é uma categoria irrelevante em faturamento, pois gera quase o mesmo nível de vendas que as demais.
@@ -20,7 +20,7 @@ def render_receita_total_por_categoria_chart(df_kpi):
         df_sales,
         x="category",
         y="total_sales",
-        text=df_sales["total_sales"].apply(lambda x: f"${abbreviate_number(x)}"),  # aqui usamos abbreviate_number
+        text=df_sales["total_sales"].apply(lambda x: f"${abbreviate_number(x)}"),
         labels={
             "category": "Categoria",
             "total_sales": "Receita Total"

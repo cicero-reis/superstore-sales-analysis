@@ -1,6 +1,6 @@
-# 📊 Variância das Vendas Mensais — 2017
+# Variância das Vendas Mensais — 2017
 
-## 🎯 Objetivo da Análise
+## Objetivo da Análise
 
 Calcular a **variância das vendas mensais** no ano de 2017 para responder à pergunta:
 
@@ -10,7 +10,7 @@ A variância é uma medida estatística que **quantifica a variabilidade dos dad
 
 ---
 
-## 🗂️ Base de Dados
+## Base de Dados
 
 - **Tabela fato:** `fact_sales`
 - **Dimensão de tempo:** `dim_date`
@@ -20,7 +20,7 @@ A variância é uma medida estatística que **quantifica a variabilidade dos dad
 
 ---
 
-## 🔍 Consulta SQL Utilizada
+## Consulta SQL Utilizada
 
 ```sql
 WITH monthly_quantity AS (
@@ -40,7 +40,7 @@ FROM monthly_quantity;
 
 ---
 
-## 📊 Resultado
+## Resultado
 
 | Métrica       | Valor       |
 | ------------- | ----------- |
@@ -48,7 +48,7 @@ FROM monthly_quantity;
 
 ---
 
-## 🧠 Interpretação Estatística
+## Interpretação Estatística
 
 A variância mede o **desvio médio quadrático** em relação à média.
 
@@ -57,11 +57,11 @@ A variância mede o **desvio médio quadrático** em relação à média.
   * Os valores mensais estão **fortemente dispersos**
   * Existe grande distância entre meses fracos e meses de pico
 
-📌 Como a variância está em **unidades ao quadrado**, sua interpretação direta é menos intuitiva do que a do desvio padrão.
+Como a variância está em **unidades ao quadrado**, sua interpretação direta é menos intuitiva do que a do desvio padrão.
 
 ---
 
-## 🔗 Relação com o Desvio Padrão
+## Relação com o Desvio Padrão
 
 A variância e o desvio padrão estão diretamente ligados:
 
@@ -74,11 +74,11 @@ A variância e o desvio padrão estão diretamente ligados:
 | Variância     | 197.668 |
 | Desvio padrão | 445     |
 
-📌 Isso confirma a **consistência matemática** da análise.
+Isso confirma a **consistência matemática** da análise.
 
 ---
 
-## 📈 Interpretação de Negócio
+## Interpretação de Negócio
 
 * A alta variância confirma que as vendas mensais **não seguem um padrão estável**
 * O negócio apresenta:
@@ -86,23 +86,23 @@ A variância e o desvio padrão estão diretamente ligados:
   * Meses de alta concentração de vendas (ex: Q4)
   * Meses com desempenho significativamente inferior
 
-📌 Estratégias baseadas apenas em médias mensais **não refletem a realidade operacional**.
+Estratégias baseadas apenas em médias mensais **não refletem a realidade operacional**.
 
 ---
 
-## ⚠️ Limitações da Variância
+## Limitações da Variância
 
 ✔ Essencial para análises estatísticas
 ✔ Base para modelos analíticos mais avançados
 
-❌ Pouco intuitiva para stakeholders
-❌ Amplifica o impacto de valores extremos
+Pouco intuitiva para stakeholders
+Amplifica o impacto de valores extremos
 
-📌 Deve ser usada como **apoio técnico**, enquanto o desvio padrão e quartis comunicam melhor o cenário.
+Deve ser usada como **apoio técnico**, enquanto o desvio padrão e quartis comunicam melhor o cenário.
 
 ---
 
-## ✅ Conclusão
+## Conclusão
 
 A variância de **197.668** reforça que as vendas mensais em 2017 apresentam **alta volatilidade**, exigindo:
 
@@ -112,7 +112,7 @@ A variância de **197.668** reforça que as vendas mensais em 2017 apresentam **
 
 ---
 
-## 🔜 Próximo Passo
+## Próximo Passo
 
 Encerrar o bloco estatístico com:
-👉 **Resumo executivo das medidas estatísticas**
+**Resumo executivo das medidas estatísticas**

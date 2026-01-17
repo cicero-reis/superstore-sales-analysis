@@ -1,6 +1,6 @@
-## 📊 **Projeto: Análise de Vendas — Superstore Sales (MySQL 8)**
+## **Projeto: Análise de Vendas — Superstore Sales (MySQL 8)**
 
-### 🎯 **Objetivo da Etapa**
+### **Objetivo da Etapa**
 
 Preparar o dataset **Superstore Sales** para análise no **MySQL 8**, garantindo:
 
@@ -12,14 +12,14 @@ Preparar o dataset **Superstore Sales** para análise no **MySQL 8**, garantindo
 
 ---
 
-## 📂 **Sobre o Dataset**
+## **Sobre o Dataset**
 
 * **Fonte:** Tableau — Sample Superstore
 * **Formato original:** CSV
 * **Tamanho:** 9.994 linhas • 21 colunas
 * **Objetivo do tratamento:** transformar dados brutos em um conjunto confiável para análise de vendas, lucro e comportamento do cliente.
 
-### 📌 **Colunas do Dataset após limpeza**
+### **Colunas do Dataset após limpeza**
 
 | Tipo                             | Colunas                                                                                                                   |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |

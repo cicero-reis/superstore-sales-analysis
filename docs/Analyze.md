@@ -1,4 +1,4 @@
-# 📊 Analyze — Superstore Sales (2017)
+# Analyze — Superstore Sales (2017)
 
 ## 1. Visão Geral da Análise
 Objetivo da análise e escopo (vendas por categoria em 2017).

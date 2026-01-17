@@ -1,10 +1,10 @@
-# 💼 **Dimensão Cliente (dim_customer)**
+# **Dimensão Cliente (dim_customer)**
 
 A dimensão cliente armazena todas as informações relacionadas aos clientes do dataset **Superstore**.
 
 ---
 
-## 1️⃣ **Colunas do dataset que pertencem ao cliente**
+## **Colunas do dataset que pertencem ao cliente**
 
 | Coluna no dataset | Pertence ao cliente?  | Vai para a dimensão? |
 | ----------------- | --------------------- | -------------------- |
@@ -18,7 +18,7 @@ A dimensão cliente armazena todas as informações relacionadas aos clientes do
 
 ---
 
-## 2️⃣ **Criar a tabela no MySQL**
+## **Criar a tabela no MySQL**
 
 ```sql
 CREATE TABLE IF NOT EXISTS dim_customer (
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS dim_customer (
 
 ---
 
-## 3️⃣ **Identificar clientes duplicados na tabela original**
+## **Identificar clientes duplicados na tabela original**
 
 ```sql
 SELECT 
@@ -48,7 +48,7 @@ HAVING total > 1;
 
 ---
 
-## 4️⃣ **Popular a dimensão removendo duplicados com ROW_NUMBER**
+## **Popular a dimensão removendo duplicados com ROW_NUMBER**
 
 ```sql
 INSERT INTO dim_customer (
@@ -73,7 +73,7 @@ WHERE t.rn = 1;
 
 ---
 
-## 5️⃣ **Conferir duplicados na dimensão criada**
+## **Conferir duplicados na dimensão criada**
 
 ```sql
 SELECT 
@@ -86,7 +86,7 @@ HAVING total > 1;
 
 ---
 
-## 6️⃣ **Verificar quantidade de clientes únicos**
+## **Verificar quantidade de clientes únicos**
 
 ```sql
 -- Na tabela original

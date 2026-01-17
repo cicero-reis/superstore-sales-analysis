@@ -1,12 +1,12 @@
-# 🧹 Process — Data Cleaning & Transformation (Superstore Sales)
+# Process — Data Cleaning & Transformation (Superstore Sales)
 
-## 📌 Objetivo da Etapa
+## Objetivo da Etapa
 
 A etapa **Process** tem como objetivo transformar dados brutos e inconsistentes em dados **limpos, padronizados e confiáveis**, prontos para análise. Nesta fase, foi aplicado técnicas práticas de limpeza de dados utilizando **MySQL 8**, seguindo boas práticas de Análise de Dados.
 
 ---
 
-## 🗂️ Dataset Utilizado
+## Dataset Utilizado
 
 **Fonte:** Superstore Sales (Tableau)
 **Formato original:** CSV importado para MySQL
@@ -22,7 +22,7 @@ Principais problemas identificados no dataset original:
 
 ---
 
-## 1️⃣ Verificação da Qualidade dos Dados (Data Integrity)
+## Verificação da Qualidade dos Dados (Data Integrity)
 
 A primeira etapa consistiu em entender a estrutura dos dados e identificar problemas de qualidade.
 
@@ -35,11 +35,11 @@ Ações realizadas:
 
 ---
 
-## 2️⃣ Correção de Tipos de Dados
+## Correção de Tipos de Dados
 
 Para evitar perda de informação, a estratégia adotada foi **criar novas colunas corrigidas**, mantendo as colunas originais temporariamente.
 
-### 📅 Datas
+### Datas
 
 * Conversão de `Order Date` e `Ship Date` de `varchar` para `DATE`
 * Criação das colunas:
@@ -47,7 +47,7 @@ Para evitar perda de informação, a estratégia adotada foi **criar novas colun
   * `order_date_clean`
   * `ship_date_clean`
 
-### 💰 Valores Numéricos
+### Valores Numéricos
 
 * Conversão de `Sales`, `Discount` e `Profit` para `DECIMAL`
 * Tratamento do separador decimal
@@ -59,7 +59,7 @@ Exemplo de abordagem:
 
 ---
 
-## 3️⃣ Tratamento de Dados Duplicados
+## Tratamento de Dados Duplicados
 
 Foram identificados múltiplos registros para o mesmo `Order ID`, o que é esperado em nível de itens, mas não em nível de pedido.
 
@@ -72,7 +72,7 @@ Isso garantiu consistência na modelagem e evitou duplicidade lógica de pedidos
 
 ---
 
-## 4️⃣ Padronização e Consistência
+## Padronização e Consistência
 
 Para garantir consistência ao longo do projeto:
 
@@ -82,7 +82,7 @@ Para garantir consistência ao longo do projeto:
 
 ---
 
-## 5️⃣ Estruturação dos Dados (Modelagem Dimensional)
+## Estruturação dos Dados (Modelagem Dimensional)
 
 Os dados foram reorganizados utilizando **Star Schema**, facilitando análises futuras e escalabilidade.
 
@@ -93,7 +93,7 @@ Os dados foram reorganizados utilizando **Star Schema**, facilitando análises f
 * `dim_order`
 * `dim_date`
 
-### 📊 Tabela Fato:
+### Tabela Fato:
 
 * `fact_sales`
 
@@ -101,7 +101,7 @@ A tabela fato armazena métricas de vendas e se relaciona com as dimensões por 
 
 ---
 
-## 6️⃣ Criação da Dimensão de Datas (`dim_date`)
+## Criação da Dimensão de Datas (`dim_date`)
 
 Foi criada uma tabela de datas contendo um intervalo completo entre:
 
@@ -121,7 +121,7 @@ Essa estrutura permite análises temporais mais eficientes.
 
 ---
 
-## 7️⃣ Validação Final dos Dados
+## Validação Final dos Dados
 
 Após o processamento, foram realizadas validações para garantir:
 
@@ -131,7 +131,7 @@ Após o processamento, foram realizadas validações para garantir:
 
 ---
 
-## ✅ Resultado da Etapa Process
+## Resultado da Etapa Process
 
 Ao final desta etapa, os dados estão:
 
